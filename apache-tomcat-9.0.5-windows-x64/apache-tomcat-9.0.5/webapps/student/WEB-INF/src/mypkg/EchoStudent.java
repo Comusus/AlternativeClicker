@@ -1,13 +1,19 @@
 package mypkg;
- 
+
 import java.io.*;
 import java.io.FileWriter;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
- 
+import java.sql.*; 
+
 public class EchoStudent extends HttpServlet {
- 
+
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "password";
+    private static final String DBURL = "jdbc:mysql://localhost:3306/cs5999";
+    
+    
    @Override
    public void doGet(HttpServletRequest request, HttpServletResponse response)
                throws IOException, ServletException {
@@ -27,6 +33,7 @@ public class EchoStudent extends HttpServlet {
          // Retrieve the value of the query parameter "username" (from text field)
          String username = request.getParameter("username");
          String username2 = request.getParameter("username2");
+         String classID = request.getParameter("classID");
          // Get null if the parameter is missing from query string.
          // Get empty string or string of white spaces if user did not fill in
          if (username == null
@@ -50,22 +57,40 @@ public class EchoStudent extends HttpServlet {
          out.println("</body></html>");
 
 
-         // Write to the text file
-         FileWriter fw;
-         BufferedWriter bw;
-         System.out.println("Writing file...");
-         try {
-            fw = new FileWriter("attendance.txt", true);
-            bw = new BufferedWriter(fw);
-            bw.write(username + ' ' + username2);
-            bw.write('\n');
-            bw.flush();
-            bw.close();
-         } catch (IOException e) {
+        // Write to database:
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DBURL, USERNAME, PASSWORD);
+            stmt = conn.prepareStatement("USE cs5999");
+            stmt.execute();
+            
+            String sql = "insert into " + classID + " (studentName) values ('" + username + " " + username2 + "')";
+            stmt = conn.prepareStatement(sql);
+            stmt.execute();
+        } catch (Exception e) {
             e.printStackTrace();
-         } 
+        }
+        
 
-         System.out.println("Finished file...Saved to: "+new File("attendance.txt").getAbsolutePath());
+         
+         // Write to the text file
+//         FileWriter fw;
+//         BufferedWriter bw;
+//         System.out.println("Writing file...");
+//         try {
+//            fw = new FileWriter("attendance.txt", true);
+//            bw = new BufferedWriter(fw);
+//            bw.write(username + ' ' + username2);
+//            bw.write('\n');
+//            bw.flush();
+//            bw.close();
+//         } catch (IOException e) {
+//            e.printStackTrace();
+//         } 
+//
+//         System.out.println("Finished file...Saved to: "+new File("attendance.txt").getAbsolutePath());
 
 
 
