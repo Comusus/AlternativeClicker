@@ -16,7 +16,7 @@ public class Attendance extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         // Set the response message's MIME type
-
+        response.setContentType("text/html; charset=UTF-8");
         String classID = request.getParameter("classID");
 
         if (classID != null) // if classID submitted
@@ -68,8 +68,10 @@ public class Attendance extends HttpServlet {
 //         } finally {
 //             br.close();
 //         }
+         
             if (classID != null) // if classID submitted
             {
+              
                 Connection conn = null;
                 PreparedStatement stmt;
                 try {
@@ -81,12 +83,14 @@ public class Attendance extends HttpServlet {
                     String sql = "SELECT * FROM " + classID;
                     ResultSet rs = st.executeQuery(sql);
                     
+                
+                    
                     // iterate through the java resultset
                     while (rs.next()) {
-                        int id = rs.getInt("id");
+//                        int id = rs.getInt("id");
                         String studentName = rs.getString("studentName");
                         // print the results
-                        out.println(studentName);
+                        out.println("<p>"+studentName+"</p>");
                     }
 
                 } catch (Exception e) {
