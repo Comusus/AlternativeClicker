@@ -45,7 +45,10 @@ body {
 }
 
 .container {
-  max-width: 800px; }
+  max-width: 800px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  }
 .header {
   margin-top: 6rem;
   text-align: center; }

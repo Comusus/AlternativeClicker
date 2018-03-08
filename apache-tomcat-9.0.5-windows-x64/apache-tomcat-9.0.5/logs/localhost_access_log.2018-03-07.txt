@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:06 -0500] "GET /student/form.html HTTP/1.1" 404 1094
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:06 -0500] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:07 -0500] "GET /student/form.html HTTP/1.1" 404 1094
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:07 -0500] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:14 -0500] "GET /student/webpages/form.html HTTP/1.1" 200 1082
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:14 -0500] "GET /student/webpages/css/normalize.css HTTP/1.1" 404 1119
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:14 -0500] "GET /student/webpages/css/skeleton.css HTTP/1.1" 404 1118
+0:0:0:0:0:0:0:1 - - [07/Mar/2018:21:21:14 -0500] "GET /student/webpages/css/main.css HTTP/1.1" 404 1114
