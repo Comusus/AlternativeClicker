@@ -2,3 +2,12 @@
 16-Mar-2018 14:30:24.376 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
 16-Mar-2018 14:30:24.916 INFO [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
 16-Mar-2018 14:30:24.927 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:35:26.415 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:35:26.418 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:36:42.267 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:36:42.273 INFO [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:36:42.294 INFO [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/instructor'
+16-Mar-2018 14:36:42.915 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/C:/Users/Peter/AppData/Local/Temp/context4358873263383076476.xml'
+16-Mar-2018 14:36:43.189 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/instructor'
+16-Mar-2018 14:46:32.332 INFO [http-nio-8080-exec-20] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+16-Mar-2018 14:46:32.348 INFO [http-nio-8080-exec-14] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/student'

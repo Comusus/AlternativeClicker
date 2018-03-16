@@ -104,6 +104,26 @@ public class EchoStudent extends HttpServlet {
             throws IOException, ServletException {
         doGet(request, response);
     }
+    
+    private boolean joinSession(String classID, String sessionID, String studentID){
+        //TODO
+        return false;
+    }
+    
+    private boolean hasOpenQuestion(String classID, String sessionID){
+        //TODO
+        return false;
+    }
+    
+    private String getOpenQuestionID(String classID, String sessionID){
+        //TODO
+        return null;
+    }
+    
+    private boolean submitAnswer(String classID, String sessionID, String questionID, String studentID, String answer){
+        //TODO
+        return false;
+    }
 
     // Filter the string for special HTML characters to prevent
     // command injection attack

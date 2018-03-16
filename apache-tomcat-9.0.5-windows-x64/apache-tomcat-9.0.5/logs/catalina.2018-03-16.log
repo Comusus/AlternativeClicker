@@ -49,3 +49,27 @@
 16-Mar-2018 14:30:21.598 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 16-Mar-2018 14:30:21.609 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 16-Mar-2018 14:30:21.610 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2106 ms
+16-Mar-2018 14:36:42.830 INFO [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+16-Mar-2018 14:36:42.930 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+16-Mar-2018 14:36:43.184 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [253] ms
+16-Mar-2018 14:36:43.189 INFO [http-nio-8080-exec-4] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+16-Mar-2018 14:46:32.348 INFO [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+16-Mar-2018 14:46:32.348 WARNING [http-nio-8080-exec-14] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [student] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+16-Mar-2018 14:46:32.348 WARNING [http-nio-8080-exec-14] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [student] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+16-Mar-2018 14:46:32.598 INFO [51] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+16-Mar-2018 14:46:34.828 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+

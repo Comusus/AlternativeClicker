@@ -145,4 +145,44 @@ public class Attendance extends HttpServlet {
         }
         return (result.toString());
     }
+    
+    private String getNewSessionID(String classID){
+        //TODO
+        return null;
+    }
+    
+    private boolean joinSession(String classID, String sessionID){
+        //TODO
+        return false;
+    }
+    
+    private boolean endSession(String classID, String sessionID){
+        //TODO
+        return false;
+    }
+    
+    private boolean openQuestion(String classID, String sessionID, String questionID){
+        //TODO
+        return false;
+    }
+    
+    private boolean closeQuestion(String classID, String sessionID, String questionID){
+        //TODO
+        return false;
+    }
+    
+    private String getQuestionData(String classID, String sessionID, String questionID){
+        //TODO
+        return null;
+    }
+    
+    private String getSessionData(String classID, String sessionID){
+        //TODO
+        return null;
+    }
+    
+    private String getClassData(String classID){
+        //TODO
+        return null;
+    }
 }
