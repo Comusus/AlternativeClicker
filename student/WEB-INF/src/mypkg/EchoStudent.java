@@ -48,6 +48,13 @@ public class EchoStudent extends HttpServlet {
             } else {
                 out.println("<p>Last Name: " + username2 + "</p>");
             }
+            
+            if (classID == null
+                    || (classID = htmlFilter(classID.trim())).length() == 0) {
+                out.println("<p>Class ID: MISSING</p>");
+            } else {
+                out.println("<p>Class ID: " + classID + "</p>");
+            }
 
             System.out.println("Test...");
             // Hyperlink "BACK" to input page
