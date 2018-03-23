@@ -48,26 +48,6 @@ public class Attendance extends HttpServlet {
             out.println("<html><head>");
             out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
             out.println("<title>Show Attendance</title></head>");
-
-            // Retrieve the value of the query parameter "username" (from text field)
-//         BufferedReader br;
-//         FileReader fr;
-//         fr = new FileReader("attendance.txt");
-//         br = new BufferedReader(fr);
-//         try {
-//             StringBuilder sb = new StringBuilder();
-//             String line = br.readLine();
-//
-//             while (line != null) {
-//                 sb.append(line);
-//                 sb.append(System.lineSeparator());
-//                 line = br.readLine();
-//             }
-//             String everything = sb.toString();
-//             out.println(everything);
-//         } finally {
-//             br.close();
-//         }
          
             if (classID != null) // if classID submitted
             {
@@ -144,21 +124,6 @@ public class Attendance extends HttpServlet {
             }
         }
         return (result.toString());
-    }
-    
-    private String getNewSessionID(String classID){
-        //TODO
-        return null;
-    }
-    
-    private boolean joinSession(String classID, String sessionID){
-        //TODO
-        return false;
-    }
-    
-    private boolean endSession(String classID, String sessionID){
-        //TODO
-        return false;
     }
     
     private boolean openQuestion(String classID, String sessionID, String questionID){
