@@ -62,7 +62,7 @@ public class Login extends HttpServlet {
             "	  <h5> Open/Close Polling </h5>\n" +
             "	  <br />\n" +
             "      <form method=\"post\" action=\"" + actionOpenCloseQuestion + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
+            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID1\" />\n" +
             "        <br />\n" +
             "        <input style=\"color:#2AB441;\" type=\"submit\" value=\"OPEN POLLING\" />\n" +
             "        <input style=\"color:#E01010;\" type=\"submit\" value=\"CLOSE POLLING\" />\n" +
@@ -74,7 +74,7 @@ public class Login extends HttpServlet {
             "	  <h5> View Polling Results </h5>\n" +
             "	  <br />\n" +
             "      <form method=\"post\" action=\"" + actionViewResults + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
+            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID2\" />\n" +
             "        <br />\n" +
             "        <input type=\"submit\" value=\"View Results\" />\n" +
             "        <input type=\"submit\" value=\"Download Results\" />\n" +
