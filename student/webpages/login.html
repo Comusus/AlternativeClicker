@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-  <title>Instructor Attendance Tracker</title>
+  <title>Student Attendance Tracker</title>
   
   <!-- CSS
   ?????????????????????????????????????????????????? -->
@@ -17,7 +17,7 @@
 <div class="container">
   <div class="row">
     <div align="center">
-      <h2>Instructor Attendance Tracker</h2>
+      <h2>Student Attendance Tracker</h2>
     </div>
   </div>
 </div>
@@ -25,14 +25,18 @@
 <div class="container">
   <div class="row">
     <div align="center">
-      <form method="post" action="echo">
-      <input type="text" placeholder="Class ID" name="classID" /><br /><br />
-      <input style="color:#2AB441;" type="submit" value="Show Attendance" />
+      <form method="post" action="login">
+      <input type="text" placeholder="Student ID" name="studentID" /> 
+	  <input type="text" placeholder="Session ID" name="sessionID" />
+	  <br /><br />
+      <input style="color:#2AB441;" type="submit" value="ENTER" />
       <input style="color:#E01010;" type="reset" value="CLEAR" />
     </form>
     </div>
+
   </div>
 </div>
 
+</form>
 </body>
 </html>

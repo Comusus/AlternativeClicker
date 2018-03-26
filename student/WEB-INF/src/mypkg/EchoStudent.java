@@ -9,9 +9,9 @@ import java.sql.*;
 
 public class EchoStudent extends HttpServlet {
 
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
-    private static final String DBURL = "jdbc:mysql://localhost:3306/cs5999";
+    private static final String DB_USERNAME = "root";
+    private static final String DB_PASSWORD = "password";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -66,7 +66,7 @@ public class EchoStudent extends HttpServlet {
             PreparedStatement stmt;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection(DBURL, USERNAME, PASSWORD);
+                conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
                 stmt = conn.prepareStatement("USE cs5999");
                 stmt.execute();
 

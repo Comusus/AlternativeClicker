@@ -6,28 +6,27 @@
  
   <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
  
-   <servlet>
+    <servlet>
       <servlet-name>AttendanceServletExample</servlet-name>
       <servlet-class>mypkg.Attendance</servlet-class>
-   </servlet>
+    </servlet>
    
-   <servlet>
+    <servlet>
        <servlet-name>LoginInstructor</servlet-name>
        <servlet-class>mypkg.Login</servlet-class>
-   </servlet>
+    </servlet>
  
-   <!-- Note: All <servlet> elements MUST be grouped together and
+    <!-- Note: All <servlet> elements MUST be grouped together and
          placed IN FRONT of the <servlet-mapping> elements -->
  
  
-   <servlet-mapping>
+    <servlet-mapping>
       <servlet-name>AttendanceServletExample</servlet-name>
       <url-pattern>/echo</url-pattern>
-   </servlet-mapping>
+    </servlet-mapping>
    
-   <servlet-mapping>
+    <servlet-mapping>
       <servlet-name>LoginInstructor</servlet-name>
       <url-pattern>/login</url-pattern>
-   </servlet-mapping>
-   
+    </servlet-mapping>
 </web-app>

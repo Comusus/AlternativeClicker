@@ -1,0 +1,105 @@
+25-Mar-2018 19:14:43.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.5
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 21:42:23 UTC
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.5.0
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Mar-2018 19:14:43.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_144
+25-Mar-2018 19:14:43.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\logging.properties
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2018 19:14:43.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\temp
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2018 19:14:43.441 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+25-Mar-2018 19:14:44.404 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+25-Mar-2018 19:14:44.646 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Mar-2018 19:14:44.812 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2018 19:14:44.823 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+25-Mar-2018 19:14:44.826 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2018 19:14:44.827 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1795 ms
+25-Mar-2018 19:14:44.868 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Mar-2018 19:14:44.868 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.5
+25-Mar-2018 19:14:44.883 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:14:45.357 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [474] ms
+25-Mar-2018 19:14:45.357 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+25-Mar-2018 19:14:45.637 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Mar-2018 19:14:45.641 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml] has finished in [282] ms
+25-Mar-2018 19:14:45.642 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs]
+25-Mar-2018 19:14:45.667 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs] has finished in [25] ms
+25-Mar-2018 19:14:45.670 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples]
+25-Mar-2018 19:14:46.122 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples] has finished in [452] ms
+25-Mar-2018 19:14:46.122 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet]
+25-Mar-2018 19:14:46.186 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet] has finished in [64] ms
+25-Mar-2018 19:14:46.186 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager]
+25-Mar-2018 19:14:46.271 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager] has finished in [85] ms
+25-Mar-2018 19:14:46.271 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager]
+25-Mar-2018 19:14:46.312 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager] has finished in [41] ms
+25-Mar-2018 19:14:46.313 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT]
+25-Mar-2018 19:14:46.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT] has finished in [51] ms
+25-Mar-2018 19:14:46.365 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Mar-2018 19:14:46.380 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+25-Mar-2018 19:14:46.382 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1559 ms
+25-Mar-2018 19:14:50.554 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+25-Mar-2018 19:14:50.592 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:14:50.643 INFO [http-nio-8080-exec-3] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [51] ms
+25-Mar-2018 19:14:50.650 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+25-Mar-2018 19:16:07.580 INFO [http-nio-8080-exec-13] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+25-Mar-2018 19:16:07.628 INFO [http-nio-8080-exec-12] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:16:07.717 INFO [http-nio-8080-exec-12] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [90] ms
+25-Mar-2018 19:16:07.724 INFO [http-nio-8080-exec-16] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+25-Mar-2018 19:17:46.006 INFO [http-nio-8080-exec-23] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+25-Mar-2018 19:17:46.065 INFO [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:17:46.135 INFO [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [70] ms
+25-Mar-2018 19:17:46.140 INFO [http-nio-8080-exec-21] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+25-Mar-2018 19:18:36.621 INFO [http-nio-8080-exec-30] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+25-Mar-2018 19:18:36.660 INFO [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:18:36.705 INFO [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [45] ms
+25-Mar-2018 19:18:36.710 INFO [http-nio-8080-exec-27] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+25-Mar-2018 19:31:26.908 INFO [http-nio-8080-exec-34] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/student]
+25-Mar-2018 19:31:26.940 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+25-Mar-2018 19:31:27.247 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml] has finished in [306] ms
+25-Mar-2018 19:31:39.720 INFO [http-nio-8080-exec-44] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+25-Mar-2018 19:31:39.757 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+25-Mar-2018 19:31:39.827 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [70] ms
+25-Mar-2018 19:31:39.833 INFO [http-nio-8080-exec-39] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+25-Mar-2018 19:33:23.747 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:33:24.040 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:33:24.076 INFO [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:33:24.182 INFO [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:33:56.651 INFO [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:33:56.872 INFO [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:33:56.908 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:33:56.982 INFO [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:34:36.751 INFO [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:34:36.904 INFO [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:38:44.312 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/student]
+25-Mar-2018 19:38:44.312 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:38:44.446 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:39:49.685 INFO [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:39:49.892 INFO [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:40:14.203 INFO [http-nio-8080-exec-69] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:40:14.413 INFO [http-nio-8080-exec-69] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:43:25.622 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/student]
+25-Mar-2018 19:43:25.622 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:43:25.778 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:43:45.839 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/student]
+25-Mar-2018 19:43:45.839 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:43:46.019 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:43:56.065 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/student]
+25-Mar-2018 19:43:56.065 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:43:56.279 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:44:16.347 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/student]
+25-Mar-2018 19:44:16.348 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] has started
+25-Mar-2018 19:44:16.556 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/student] is completed
+25-Mar-2018 19:44:36.631 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/instructor]
+25-Mar-2018 19:44:36.631 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/instructor] has started
+25-Mar-2018 19:44:36.697 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/instructor] is completed

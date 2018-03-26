@@ -8,9 +8,9 @@ import java.sql.*;
 
 public class Login extends HttpServlet {
 
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
-    private static final String DBURL = "jdbc:mysql://localhost:3306/cs5999";
+    private static final String DB_USERNAME = "root";
+    private static final String DB_PASSWORD = "password";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -62,11 +62,11 @@ public class Login extends HttpServlet {
             "	  <h5> Open/Close Polling </h5>\n" +
             "	  <br />\n" +
             "      <form method=\"post\" action=\"" + actionOpenCloseQuestion + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID1\" />\n" +
-            "        <input type=\"hidden\" name=\"sessionID1\" value=\"" + sessionID + "\" /> " +
+            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
+            "        <input type=\"hidden\" name=\"sessionID\" value=\"" + sessionID + "\" /> " +
             "        <br />\n" +
-            "        <input style=\"color:#2AB441;\" type=\"submit\" value=\"OPEN POLLING\" />\n" +
-            "        <input style=\"color:#E01010;\" type=\"submit\" value=\"CLOSE POLLING\" />\n" +
+            "        <input style=\"color:#2AB441;\" type=\"submit\" name=\"submit\" value=\"OPEN POLLING\" />\n" +
+            "        <input style=\"color:#E01010;\" type=\"submit\" name=\"submit\" value=\"CLOSE POLLING\" />\n" +
             "      </form> \n" +
             "	</div>\n" +
             "  </div>\n" +
@@ -75,11 +75,11 @@ public class Login extends HttpServlet {
             "	  <h5> View Polling Results </h5>\n" +
             "	  <br />\n" +
             "      <form method=\"post\" action=\"" + actionViewResults + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID2\" />\n" +
-            "        <input type=\"hidden\" name=\"sessionID1\" value=\"" + sessionID + "\" /> " +
+            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
+            "        <input type=\"hidden\" name=\"session ID\" value=\"" + sessionID + "\" /> " +
             "        <br />\n" +
-            "        <input type=\"submit\" value=\"View Results\" />\n" +
-            "        <input type=\"submit\" value=\"Download Results\" />\n" +
+            "        <input type=\"submit\" name=\"submit\" value=\"View Results\" />\n" +
+            "        <input type=\"submit\" name=\"submit\" value=\"Download Results\" />\n" +
             "      </form> \n" +
             "    </div>\n" +
             "  </div>\n" +

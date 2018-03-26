@@ -60,3 +60,5 @@
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Unknown Source)
 
+22-Mar-2018 22:21:05.097 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+22-Mar-2018 22:21:05.097 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

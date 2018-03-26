@@ -210,3 +210,9 @@
 0:0:0:0:0:0:0:1 - - [22/Mar/2018:22:13:38 -0400] "GET /instructor/css/skeleton.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [22/Mar/2018:22:13:38 -0400] "GET /instructor/css/main.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [22/Mar/2018:22:13:42 -0400] "POST /instructor/login HTTP/1.1" 200 1392
+127.0.0.1 - - [22/Mar/2018:22:21:03 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - user [22/Mar/2018:22:21:03 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [22/Mar/2018:22:21:03 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - user [22/Mar/2018:22:21:03 -0400] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [22/Mar/2018:22:21:04 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - user [22/Mar/2018:22:21:04 -0400] "GET /manager/text/ HTTP/1.1" 200 39
