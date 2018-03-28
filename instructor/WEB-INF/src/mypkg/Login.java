@@ -10,7 +10,8 @@ public class Login extends HttpServlet {
 
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "password";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/";
+    private static final String DB_NAME = "cs5999";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,6 +23,13 @@ public class Login extends HttpServlet {
         
         //TODO: Check to make sure inputs are valid (very similar to Attendance.java
         String sessionID = this.getSessionID(classID, classDate);
+        
+        //create table for the class if not exist
+        createClassTableIfNotExist(classID);
+        insertSessionRecordIfNotExist(classID, sessionID, classDate);
+        //create table for the session if not exit
+        createSessionTableIfNotExist(sessionID);
+        
         String actionOpenCloseQuestion = "echo";
         String actionViewResults = "echo";
         
@@ -138,8 +146,76 @@ public class Login extends HttpServlet {
      * new session is created in the database. Otherwise, we use the existing
      * entry in the database */
     private String getSessionID(String classID, String date){
-        //TODO
-        return "-1";
+        //TODO: could design more complex way to name a session here
+        return (classID + date).replace("-", "");
     }    
     
+    private void createClassTableIfNotExist(String classTableName){
+        //check if table exists
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            if (classTableName.contains(";")) //no class name should contain ";", prevent injection attack.
+                return;
+            stmt = conn.prepareStatement("CREATE TABLE IF NOT EXISTS " + classTableName + " (sessionID VARCHAR(50), time VARCHAR(20), UNIQUE(sessionID))");
+            stmt.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void createSessionTableIfNotExist(String sessionTableName){
+        //check if table exists
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            if (sessionTableName.contains(";")) //no session name should contain ";", prevent injection attack.
+                return;
+            stmt = conn.prepareStatement("CREATE TABLE IF NOT EXISTS " + sessionTableName + " (studentID VARCHAR(50), qID VARCHAR(20), ans VARCHAR(100), UNIQUE(studentID, qID))");
+            stmt.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void insertSessionRecordIfNotExist(String classID, String sessionID, String time){
+        //must already have the table specified by classID
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepase statement to avoid injection attack
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            if (classID.contains(";")) //no class name should contain ";", prevent injection attack.
+                return;
+            String insertTableSQL = "INSERT INTO " + classID
+		+ "(sessionID, time) VALUES"
+		+ "(?,?)"
+                + "ON DUPLICATE KEY UPDATE time=?";
+            stmt = conn.prepareStatement(insertTableSQL);
+            stmt.setString(1, sessionID);
+            stmt.setString(2, time);
+            stmt.setString(3, time);
+            // execute insert SQL stetement
+            stmt .executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
