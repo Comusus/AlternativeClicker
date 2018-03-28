@@ -11,10 +11,7 @@ import javax.servlet.http.*;
 import java.util.*;
 import java.sql.*;
 
-/**
- *
- * @author geniusming
- */
+
 public class ClosePoll extends HttpServlet{
     
     private static final String DB_USERNAME = "root";

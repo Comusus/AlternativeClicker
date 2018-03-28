@@ -11,10 +11,7 @@ import javax.servlet.http.*;
 import java.util.*;
 import java.sql.*;
 
-/**
- *
- * @author geniusming
- */
+
 public class OpenPoll extends HttpServlet{
     
     private static final String DB_USERNAME = "root";
