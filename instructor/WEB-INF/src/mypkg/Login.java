@@ -212,7 +212,7 @@ public class Login extends HttpServlet {
             stmt.setString(2, time);
             stmt.setString(3, time);
             // execute insert SQL stetement
-            stmt .executeUpdate();
+            stmt.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();

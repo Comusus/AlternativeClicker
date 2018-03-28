@@ -26,7 +26,7 @@ public class ClosePoll extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         
-        String qestionID = request.getParameter("quesionID");
+        String questionID = request.getParameter("quesionID");
         String sessionID = request.getParameter("sessionID");
         
         //connect to db, set table correspondingto current session to writable

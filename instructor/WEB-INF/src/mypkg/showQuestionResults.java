@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mypkg;
 
 import java.io.*;
@@ -15,7 +11,7 @@ import java.sql.*;
  *
  * @author geniusming
  */
-public class OpenPoll extends HttpServlet{
+public class showQuestionResults extends HttpServlet{
     
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "password";
@@ -32,18 +28,31 @@ public class OpenPoll extends HttpServlet{
         //connect to db, set table correspondingto current session to writable
         Connection conn = null;
         PreparedStatement stmt;
+        PrintWriter out = response.getWriter();
         try {
-            //switch to correct db, use prepase statement to avoid injection attack
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             stmt = conn.prepareStatement("USE " + DB_NAME);
             stmt.execute();
             
+            Statement st = conn.createStatement();
             if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
                 return;
-            String queryStr = "RENAME TABLE " + sessionID + "_locked TO " + sessionID;
+            String queryStr = "SELECT * FROM " + sessionID
+                + "WHERE qID=?";
+            
             stmt = conn.prepareStatement(queryStr);
-            stmt.execute();
+            stmt.setString(1, questionID);
+            // execute SQL query
+            ResultSet rs = stmt.executeQuery(queryStr);
+
+            // iterate through the java resultset
+            while (rs.next()) {
+                String studentID = rs.getString("studentID");
+                String ans = rs.getString("ans");
+                // print the results
+                out.println("<p>"+studentID+":"+ans+"</p>");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,6 +65,4 @@ public class OpenPoll extends HttpServlet{
             throws IOException, ServletException {
         doGet(request, response);
     }
-
-        
 }
