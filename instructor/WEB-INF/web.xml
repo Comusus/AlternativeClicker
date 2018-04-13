@@ -15,6 +15,16 @@
        <servlet-name>LoginInstructor</servlet-name>
        <servlet-class>mypkg.Login</servlet-class>
     </servlet>
+    
+    <servlet>
+       <servlet-name>OpenClosePoll</servlet-name>
+       <servlet-class>mypkg.OpenClosePoll</servlet-class>
+    </servlet>
+    
+    <servlet>
+       <servlet-name>ShowQuestionResults</servlet-name>
+       <servlet-class>mypkg.ShowQuestionResults</servlet-class>
+    </servlet>
  
     <!-- Note: All <servlet> elements MUST be grouped together and
          placed IN FRONT of the <servlet-mapping> elements -->
@@ -29,4 +39,15 @@
       <servlet-name>LoginInstructor</servlet-name>
       <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>OpenClosePoll</servlet-name>
+      <url-pattern>/openClosePoll</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>ShowQuestionResults</servlet-name>
+      <url-pattern>/showQuestionResults</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

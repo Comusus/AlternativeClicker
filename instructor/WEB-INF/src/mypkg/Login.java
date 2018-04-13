@@ -29,9 +29,10 @@ public class Login extends HttpServlet {
         insertSessionRecordIfNotExist(classID, sessionID, classDate);
         //create table for the session if not exit
         createSessionTableIfNotExist(sessionID);
+        createSessionActiveQuestionTableIfNotExist(sessionID);
         
-        String actionOpenCloseQuestion = "echo";
-        String actionViewResults = "echo";
+        String actionOpenCloseQuestion = "openClosePoll";
+        String actionViewResults = "showQuestionResults";
         
         response.setContentType("text/html; charset=UTF-8");
         // Allocate a output writer to write the response message into the network socket
@@ -84,7 +85,7 @@ public class Login extends HttpServlet {
             "	  <br />\n" +
             "      <form method=\"post\" action=\"" + actionViewResults + "\">\n" +
             "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
-            "        <input type=\"hidden\" name=\"session ID\" value=\"" + sessionID + "\" /> " +
+            "        <input type=\"hidden\" name=\"sessionID\" value=\"" + sessionID + "\" /> " +
             "        <br />\n" +
             "        <input type=\"submit\" name=\"submit\" value=\"View Results\" />\n" +
             "        <input type=\"submit\" name=\"submit\" value=\"Download Results\" />\n" +
@@ -184,6 +185,26 @@ public class Login extends HttpServlet {
             if (sessionTableName.contains(";")) //no session name should contain ";", prevent injection attack.
                 return;
             stmt = conn.prepareStatement("CREATE TABLE IF NOT EXISTS " + sessionTableName + " (studentID VARCHAR(50), qID VARCHAR(20), ans VARCHAR(100), UNIQUE(studentID, qID))");
+            stmt.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+        private void createSessionActiveQuestionTableIfNotExist(String sessionID){
+        //check if table exists
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
+                return;
+            stmt = conn.prepareStatement("CREATE TABLE IF NOT EXISTS " + sessionID + "activeQuestion" + " (qID VARCHAR(20), UNIQUE(qID))");
             stmt.execute();
         } catch (Exception e) {
             e.printStackTrace();
