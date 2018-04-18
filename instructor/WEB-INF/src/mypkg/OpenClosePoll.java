@@ -25,7 +25,9 @@ public class OpenClosePoll extends HttpServlet{
         
         String actionType = request.getParameter("submit");
         String questionID = request.getParameter("questionID");
-        String sessionID = request.getParameter("sessionID");
+        HttpSession httpSession = request.getSession();
+        String username = (String) httpSession.getAttribute("username");
+        String sessionID = (String) httpSession.getAttribute("sessionID");
         
         PrintWriter out = response.getWriter();
         int success = 0; //1 if all notmal, -1 if operation failed

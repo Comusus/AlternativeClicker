@@ -20,87 +20,43 @@ public class Login extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         String classID = request.getParameter("classID");
         String classDate = request.getParameter("classDate");
-        
-        //TODO: Check to make sure inputs are valid (very similar to Attendance.java
+        String username = request.getParameter("instructorUsername");
+        String password = request.getParameter("instructorPassword");
         String sessionID = this.getSessionID(classID, classDate);
+        
+        //TODO: Check to make sure inputs are valid (very similar to Attendance.java)
+        // MAKE SURE
+        // TO DO THIS
+        
+        // Validate username and password
+        PrintWriter out = response.getWriter();
+        boolean isValidPassword = validateUsernamePassword(classID, username, password);
+        if (!isValidPassword){
+            try{
+                out.println("Invalid password. Please try again");
+            } finally {
+                out.close();  // Always close the output writer
+            }
+            return;
+        }
+        else{
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            session.setAttribute("sessionID", sessionID);
+        }
         
         //create table for the class if not exist
         createClassTableIfNotExist(classID);
         insertSessionRecordIfNotExist(classID, sessionID, classDate);
-        //create table for the session if not exit
+        
+        //create table for the session if not exist
         createSessionTableIfNotExist(sessionID);
         createSessionActiveQuestionTableIfNotExist(sessionID);
         
-        String actionOpenCloseQuestion = "openClosePoll";
-        String actionViewResults = "showQuestionResults";
-        
-        response.setContentType("text/html; charset=UTF-8");
-        // Allocate a output writer to write the response message into the network socket
-        PrintWriter out = response.getWriter();
-
-        // Write the response message, in an HTML page
-        try {
-            out.println("<!DOCTYPE html>\n" +
-            "<html>\n" +
-            "<head>\n" +
-            "  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>\n" +
-            "  <title>Instructor Attendance Tracker</title>\n" +
-            "  \n" +
-            "  <!-- CSS\n" +
-            "  ?????????????????????????????????????????????????? -->\n" +
-            "  <link rel=\"stylesheet\" href=\"css/normalize.css\">\n" +
-            "  <link rel=\"stylesheet\" href=\"css/skeleton.css\">\n" +
-            "  <link rel=\"stylesheet\" href=\"css/main.css\">  \n" +
-            "  \n" +
-            "</head>\n" +
-            " \n" +
-            "<body>\n" +
-            "\n" +
-            "<div class=\"container\">\n" +
-            "  <div class=\"row\">\n" +
-            "    <div align=\"center\">\n" +
-            "      <h2>Instructor Attendance Tracker</h2>\n" +
-            "	  <h4>Session ID: " + sessionID + "</h4>\n" +
-            "    </div>\n" +
-            "  </div>\n" +
-            "</div>\n" +
-            "\n" +
-            "<div class=\"row\">\n" +
-            "  <div class=\"one-half column\">\n" +
-            "    <div align=\"center\">\n" +
-            "	  <h5> Open/Close Polling </h5>\n" +
-            "	  <br />\n" +
-            "      <form method=\"post\" action=\"" + actionOpenCloseQuestion + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
-            "        <input type=\"hidden\" name=\"sessionID\" value=\"" + sessionID + "\" /> " +
-            "        <br />\n" +
-            "        <input style=\"color:#2AB441;\" type=\"submit\" name=\"submit\" value=\"OPEN POLLING\" />\n" +
-            "        <input style=\"color:#E01010;\" type=\"submit\" name=\"submit\" value=\"CLOSE POLLING\" />\n" +
-            "      </form> \n" +
-            "	</div>\n" +
-            "  </div>\n" +
-            "  <div class=\"one-half column\">\n" +
-            "    <div align=\"center\">\n" +
-            "	  <h5> View Polling Results </h5>\n" +
-            "	  <br />\n" +
-            "      <form method=\"post\" action=\"" + actionViewResults + "\">\n" +
-            "        <input type=\"text\" placeholder=\"Question ID\" name=\"questionID\" />\n" +
-            "        <input type=\"hidden\" name=\"sessionID\" value=\"" + sessionID + "\" /> " +
-            "        <br />\n" +
-            "        <input type=\"submit\" name=\"submit\" value=\"View Results\" />\n" +
-            "        <input type=\"submit\" name=\"submit\" value=\"Download Results\" />\n" +
-            "      </form> \n" +
-            "    </div>\n" +
-            "  </div>\n" +
-            "</div>\n" +
-            "\n" +
-            "</body>\n" +
-            "</html>");
-            
-
-        } finally {
-            out.close();  // Always close the output writer
-        }
+        // Forward request to attendance.jsp
+        request.setAttribute("sessionID", sessionID);
+        RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
+        view.forward(request, response);
     }
 
     // Redirect POST request to GET request.
@@ -110,8 +66,8 @@ public class Login extends HttpServlet {
         doGet(request, response);
     }
 
-    // Filter the string for special HTML characters to prevent
-    // command injection attack
+    /* Filter the string for special HTML characters to prevent
+     * command injection attack */
     private static String htmlFilter(String message) {
         if (message == null) {
             return null;
@@ -191,7 +147,7 @@ public class Login extends HttpServlet {
         }
     }
     
-        private void createSessionActiveQuestionTableIfNotExist(String sessionID){
+    private void createSessionActiveQuestionTableIfNotExist(String sessionID){
         //check if table exists
         Connection conn = null;
         PreparedStatement stmt;
@@ -238,5 +194,10 @@ public class Login extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    private boolean validateUsernamePassword(String classID, String username, String password){
+        //
+        return true;
     }
 }
