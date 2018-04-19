@@ -19,7 +19,7 @@
 
 <%
 	if(session.getAttribute("username")==null){
-		response.sendRedirect("login.html");
+		response.sendRedirect("index.html");
 	}
 %>
 

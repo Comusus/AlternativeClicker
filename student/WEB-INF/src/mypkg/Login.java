@@ -20,89 +20,63 @@ public class Login extends HttpServlet {
         // Set the response message's MIME type
         response.setContentType("text/html; charset=UTF-8");
         String studentID = request.getParameter("studentID");
+        String password = request.getParameter("studentPassword");
+        String classID = request.getParameter("classID");
         String sessionID = request.getParameter("sessionID");
         
-        // Get current time
+        //TODO: Check to make sure inputs are valid (very similar to Attendance.java)
+        // MAKE SURE
+        // TO DO THIS
+        
+        // Validate username and password
+        PrintWriter out = response.getWriter();
+        boolean isValidPassword = isValidPassword(classID, studentID, password);
+        if (!isValidPassword){
+            try{
+                out.println("Invalid password. Please try again");
+            } finally {
+                out.close();  // Always close the output writer
+            }
+            return;
+        }
+        else{
+            HttpSession session = request.getSession();
+            session.setAttribute("studentID", studentID);
+            session.setAttribute("sessionID", sessionID);
+        }
+        
+        response.setContentType("text/html; charset=UTF-8");
+        
+        // TODO
+        // Logging in logic
+        // TODO
+        
+        // Forward request to studentapp.jsp
+        request.setAttribute("sessionID", sessionID);
+        request.setAttribute("studentID", studentID);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 	LocalDateTime now = LocalDateTime.now();
 	String currTime = dtf.format(now);
-        
-        //TODO: Check to make sure inputs are valid (very similar to Attendance.java
-        // Then, filter results using htmlFilter
-        String actionSubmitAnswer = "echo";
-        
-        response.setContentType("text/html; charset=UTF-8");
-        // Allocate a output writer to write the response message into the network socket
-        PrintWriter out = response.getWriter();
-
-        // Write the response message, in an HTML page
-        try {
-            out.println("<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "<head>\n" +
-                "  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>\n" +
-                "  <title>Student Polling Application</title>\n" +
-                "  \n" +
-                "  <!-- CSS\n" +
-                "  ?????????????????????????????????????????????????? -->\n" +
-                "  <link rel=\"stylesheet\" href=\"css/normalize.css\">\n" +
-                "  <link rel=\"stylesheet\" href=\"css/skeleton.css\">\n" +
-                "  <link rel=\"stylesheet\" href=\"css/main.css\">  \n" +
-                "  \n" +
-                "</head>\n" +
-                " \n" +
-                "<body>\n" +
-                "\n" +
-                "<div class=\"container\">\n" +
-                "  <div class=\"row\">\n" +
-                "    <div align=\"center\">\n" +
-                "      <h2>Session ID: " + sessionID + " </h2>\n" +
-                "      <h4>Student ID: " + studentID + " </h4>\n" +
-                "      <h5>Time Last Submitted/Logged In: + " + currTime + " </h5>\n" +
-                "    </div>\n" +
-                "  </div>\n" +
-                "</div>\n" +
-                "\n" +
-                "<div class=\"container\">\n" +
-                "  <div class=\"row\">\n" +
-                "    <div align=\"center\">\n" +
-                "      <form method=\"post\" action=\"" + actionSubmitAnswer + "\">\n" +
-                "        <input type=\"hidden\" name=\"sessionID\" value=\"" + sessionID + "\" /> " +
-                "        <input type=\"hidden\" name=\"studentID\" value=\"" + studentID + "\" /> " +
-                "        <input style=\"color:#0000A0;\" type=\"submit\" name=\"submit\" value=\"A\" />\n" +
-                "        <br />\n" +
-                "        <input style=\"color:#0000A0;\" type=\"submit\" name=\"submit\" value=\"B\" />\n" +
-                "        <br />\n" +
-                "        <input style=\"color:#0000A0;\" type=\"submit\" name=\"submit\" value=\"C\" />\n" +
-                "        <br />\n" +
-                "        <input style=\"color:#0000A0;\" type=\"submit\" name=\"submit\" value=\"D\" />\n" +
-                "        <br />\n" +
-                "        <input style=\"color:#0000A0;\" type=\"submit\" name=\"submit\" value=\"E\" />\n" +
-                "      </form>\n" +
-                "    </div>\n" +
-                "\n" +
-                "  </div>\n" +
-                "</div>\n" +
-                "\n" +
-                "</form>\n" +
-                "</body>\n" +
-                "</html>");
-            
-
-        } finally {
-            out.close();  // Always close the output writer
-        }
+        request.setAttribute("lastAction", "Logged in at " + currTime);
+        RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
+        view.forward(request, response);
     }
 
-    // Redirect POST request to GET request.
+    /* Redirect POST request to GET request. */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         doGet(request, response);
     }
-
-    // Filter the string for special HTML characters to prevent
-    // command injection attack
+    
+    /* Validates password is correct */
+    private boolean isValidPassword(String classID, String studentID, String password){
+        // TODO
+        return true;
+    }
+    
+    /* Filter the string for special HTML characters to prevent
+     * command injection attack */
     private static String htmlFilter(String message) {
         if (message == null) {
             return null;
@@ -131,15 +105,5 @@ public class Login extends HttpServlet {
             }
         }
         return (result.toString());
-    }
-    
-    /* Returns the sessionID for a given classID and date. This is a
-     * Deterministic hash. If this session has never been accessed before, a
-     * new session is created in the database. Otherwise, we use the existing
-     * entry in the database */
-    private String getSessionID(String classID, String date){
-        //TODO
-        return "-1";
-    }    
-    
+    } 
 }

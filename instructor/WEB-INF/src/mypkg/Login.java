@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
         
         // Validate username and password
         PrintWriter out = response.getWriter();
-        boolean isValidPassword = validateUsernamePassword(classID, username, password);
+        boolean isValidPassword = isValidPassword(classID, username, password);
         if (!isValidPassword){
             try{
                 out.println("Invalid password. Please try again");
@@ -196,8 +196,8 @@ public class Login extends HttpServlet {
         }
     }
     
-    private boolean validateUsernamePassword(String classID, String username, String password){
-        //
+    private boolean isValidPassword(String classID, String username, String password){
+        // TODO
         return true;
     }
 }
