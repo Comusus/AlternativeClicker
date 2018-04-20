@@ -22,8 +22,10 @@ public class ShowQuestionResults extends HttpServlet{
             throws IOException, ServletException {
         
         String questionID = request.getParameter("questionID");
-        String sessionID = request.getParameter("sessionID");
         String actionType = request.getParameter("submit");
+        HttpSession httpSession = request.getSession();
+        String username = (String) httpSession.getAttribute("username");
+        String sessionID = (String) httpSession.getAttribute("sessionID");
         
         PrintWriter out = response.getWriter();
         int success = 0; //1 if all notmal, -1 if operation failed
@@ -65,6 +67,7 @@ public class ShowQuestionResults extends HttpServlet{
                 return -1;
             String queryStr = "SELECT * FROM " + sessionID + " WHERE qID = ?";
             System.out.println(queryStr);
+            System.out.println(questionID);
             stmt = conn.prepareStatement(queryStr);
             stmt.setString(1, questionID);
             
