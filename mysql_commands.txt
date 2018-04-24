@@ -1,0 +1,35 @@
+/*
+mysql command to create instructorSaltHash table:
+*/
+create table instructorSaltHash (
+username varchar(50) NOT NULL,
+salt varchar(16) NOT NULL,
+hash varchar(32) NOT NULL,
+UNIQUE (username)
+);
+
+/*
+mysql command to insert some username salt records:
+NOTE: use 12345678 as password, salts are random, 
+	hash are calculated here: https://www.md5hashgenerator.com/
+	input should be salt+12345678 (e.g. w9Tr%!7u12345678)
+	then put result into the table as hash (e.g. 72b90f0cae9cb7febebb63026e55edd2)
+*/
+INSERT INTO instructorSaltHash
+VALUES ('my465', 'w9Tr%!7u', '72b90f0cae9cb7febebb63026e55edd2');
+
+/*
+mysql command to create studentSaltHash table:
+*/
+create table studentSaltHash (
+username varchar(50) NOT NULL,
+salt varchar(8) NOT NULL,
+hash varchar(32) NOT NULL,
+UNIQUE (username)
+);
+
+/*
+mysql command to insert some username salt records:
+*/
+INSERT INTO studentSaltHash
+VALUES ('my465', 'w9Tr%!7u', '72b90f0cae9cb7febebb63026e55edd2');
