@@ -22,8 +22,10 @@ public class ShowQuestionResults extends HttpServlet{
             throws IOException, ServletException {
         
         String questionID = request.getParameter("questionID");
-        String sessionID = request.getParameter("sessionID");
         String actionType = request.getParameter("submit");
+        HttpSession httpSession = request.getSession();
+        String username = (String) httpSession.getAttribute("username");
+        String sessionID = (String) httpSession.getAttribute("sessionID");
         
         PrintWriter out = response.getWriter();
         int success = 0; //1 if all notmal, -1 if operation failed
@@ -36,7 +38,9 @@ public class ShowQuestionResults extends HttpServlet{
         else if (actionType.equals("Download Results")){
             success = this.downloadResults(sessionID, questionID);
             if (success == -1)
-                out.println("Failed to download result for " + questionID);
+                out.println("Failed to download result.");
+            else
+                out.println("CSV File is created successfully.");
         }
         
         //TODO: show result in a web page here
@@ -65,6 +69,7 @@ public class ShowQuestionResults extends HttpServlet{
                 return -1;
             String queryStr = "SELECT * FROM " + sessionID + " WHERE qID = ?";
             System.out.println(queryStr);
+            System.out.println(questionID);
             stmt = conn.prepareStatement(queryStr);
             stmt.setString(1, questionID);
             
@@ -89,8 +94,51 @@ public class ShowQuestionResults extends HttpServlet{
     
     private int downloadResults(String sessionID, String questionID){
         //TODO: send result as file
-        
-        
-        return -1;
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
+                return -1;
+            String queryStr = "SELECT * FROM " + sessionID + " WHERE qID = ?";
+            stmt = conn.prepareStatement(queryStr);
+            stmt.setString(1, questionID);
+            
+            // execute SQL query
+            ResultSet rs = stmt.executeQuery();
+            
+            FileWriter fw = new FileWriter(sessionID+".csv");
+            fw.append("studentID");
+            fw.append(',');
+            fw.append("qID");
+            fw.append(',');
+            fw.append("ans");
+            fw.append('\n');
+            
+            // iterate through the java resultset
+            while (rs.next()) {
+                String studentID = rs.getString("studentID");
+                String qID = rs.getString("qID");
+                String ans = rs.getString("ans");
+                // print the results
+                fw.append(studentID);
+                fw.append(',');
+                fw.append(qID);
+                fw.append(',');
+                fw.append(ans);
+                fw.append('\n');
+            }
+            fw.flush();
+            fw.close();
+            return 1;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
