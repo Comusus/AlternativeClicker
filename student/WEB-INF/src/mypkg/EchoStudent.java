@@ -2,6 +2,7 @@ package mypkg;
 
 import java.io.*;
 import java.io.FileWriter;
+import static java.lang.System.out;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
@@ -26,11 +27,81 @@ public class EchoStudent extends HttpServlet {
         String sessionID = (String) httpSession.getAttribute("sessionID");
         
         // TODO
-        // Actual polling logic!!!
-//        if (hasOpenQuestion(classID, sessionID)) {
-//            String qID = getOpenQuestionID(classID, sessionID);
-//            
-//        }
+        if (buttonPressed.equals("A")){
+            Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
+            if (!openquestion) {
+                out.println("No Open Question");
+            } else {
+                String qID = this.getOpenQuestionID(classID, sessionID);
+                if (!qID.isEmpty()) {
+                    if (submitAnswer(classID, sessionID, qID, studentID, "A")) {
+                        out.println("Submitted A");
+                    } else {
+                        out.println("Failed to Submit");
+                    }   
+                }
+            }       
+        }
+        else if (buttonPressed.equals("B")){
+            Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
+            if (!openquestion) {
+                out.println("No Open Question");
+            } else {
+                String qID = this.getOpenQuestionID(classID, sessionID);
+                if (!qID.isEmpty()) {
+                    if (submitAnswer(classID, sessionID, qID, studentID, "B")) {
+                        out.println("Submitted B");
+                    } else {
+                        out.println("Failed to Submit");
+                    }   
+                }
+            }
+        }
+        else if (buttonPressed.equals("C")){
+            Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
+            if (!openquestion) {
+                out.println("No Open Question");
+            } else {
+                String qID = this.getOpenQuestionID(classID, sessionID);
+                if (!qID.isEmpty()) {
+                    if (submitAnswer(classID, sessionID, qID, studentID, "C")) {
+                        out.println("Submitted C");
+                    } else {
+                        out.println("Failed to Submit");
+                    }   
+                }
+            }
+        }
+        else if (buttonPressed.equals("D")){
+            Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
+            if (!openquestion) {
+                out.println("No Open Question");
+            } else {
+                String qID = this.getOpenQuestionID(classID, sessionID);
+                if (!qID.isEmpty()) {
+                    if (submitAnswer(classID, sessionID, qID, studentID, "D")) {
+                        out.println("Submitted D");
+                    } else {
+                        out.println("Failed to Submit");
+                    }   
+                }
+            }
+        }
+        else if (buttonPressed.equals("E")){
+            Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
+            if (!openquestion) {
+                out.println("No Open Question");
+            } else {
+                String qID = this.getOpenQuestionID(classID, sessionID);
+                if (!qID.isEmpty()) {
+                    if (submitAnswer(classID, sessionID, qID, studentID, "E")) {
+                        out.println("Submitted E");
+                    } else {
+                        out.println("Failed to Submit");
+                    }   
+                }
+            }
+        }
         // TODO
         
         // Forward request to studentapp.jsp
@@ -125,6 +196,7 @@ public class EchoStudent extends HttpServlet {
             //| CS599920180224activeQuestion
             // check if there is an open question
             String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            out.println(query);
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);
             if (rs.isBeforeFirst()) {
@@ -155,7 +227,10 @@ public class EchoStudent extends HttpServlet {
             String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);
-            return rs.getString("qID");
+            while (rs.next()) {
+                String question = rs.getString("qID");
+                return question;
+            }
         
         } catch (Exception e) {
             e.printStackTrace();

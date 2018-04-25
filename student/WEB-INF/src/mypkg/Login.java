@@ -43,6 +43,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("studentID", studentID);
             session.setAttribute("sessionID", sessionID);
+            session.setAttribute("classID", classID);
         }
         
         response.setContentType("text/html; charset=UTF-8");
@@ -54,6 +55,7 @@ public class Login extends HttpServlet {
         // Forward request to studentapp.jsp
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("studentID", studentID);
+        request.setAttribute("classID", classID);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 	LocalDateTime now = LocalDateTime.now();
 	String currTime = dtf.format(now);
