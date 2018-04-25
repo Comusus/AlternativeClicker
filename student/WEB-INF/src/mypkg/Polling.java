@@ -10,7 +10,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class EchoStudent extends HttpServlet {
+public class Polling extends HttpServlet {
 
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "password";
@@ -27,6 +27,7 @@ public class EchoStudent extends HttpServlet {
         String sessionID = (String) httpSession.getAttribute("sessionID");
         
         // TODO
+        Boolean answered = false;
         if (buttonPressed.equals("A")){
             Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
             if (!openquestion) {
@@ -36,6 +37,7 @@ public class EchoStudent extends HttpServlet {
                 if (!qID.isEmpty()) {
                     if (submitAnswer(classID, sessionID, qID, studentID, "A")) {
                         out.println("Submitted A");
+                        answered = true;
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -51,6 +53,7 @@ public class EchoStudent extends HttpServlet {
                 if (!qID.isEmpty()) {
                     if (submitAnswer(classID, sessionID, qID, studentID, "B")) {
                         out.println("Submitted B");
+                        answered = true;
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -66,6 +69,7 @@ public class EchoStudent extends HttpServlet {
                 if (!qID.isEmpty()) {
                     if (submitAnswer(classID, sessionID, qID, studentID, "C")) {
                         out.println("Submitted C");
+                        answered = true;
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -81,6 +85,7 @@ public class EchoStudent extends HttpServlet {
                 if (!qID.isEmpty()) {
                     if (submitAnswer(classID, sessionID, qID, studentID, "D")) {
                         out.println("Submitted D");
+                        answered = true;
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -96,6 +101,7 @@ public class EchoStudent extends HttpServlet {
                 if (!qID.isEmpty()) {
                     if (submitAnswer(classID, sessionID, qID, studentID, "E")) {
                         out.println("Submitted E");
+                        answered = true;
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -110,7 +116,11 @@ public class EchoStudent extends HttpServlet {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 	LocalDateTime now = LocalDateTime.now();
 	String currTime = dtf.format(now);
-        request.setAttribute("lastAction", "Submitted " + buttonPressed + " at " + currTime);
+        if (answered) {
+            request.setAttribute("lastAction", "Submitted " + buttonPressed + " at " + currTime);
+        } else {
+            request.setAttribute("lastAction", "No Open Question -- Failed To Submit  " + buttonPressed + " at " + currTime);   
+        }
         RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
         view.forward(request, response);
     }
