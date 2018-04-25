@@ -21,10 +21,10 @@ VALUES ('my465', 'w9Tr%!7u', '72b90f0cae9cb7febebb63026e55edd2');
 /*
 Gary: Should have classID if we want this to work for multiple classes so users can’t log into any class.
 mysql command to create studentSaltHash table:
+If you want to delete the old table use DROP TABLE studentSaltHash
 */
-create table studentSaltHash (
+create table CS5999students (
 username varchar(50) NOT NULL,
-classID varchar(50) NOT NULL,
 salt varchar(8) NOT NULL,
 hash varchar(32) NOT NULL,
 UNIQUE (username)
@@ -33,4 +33,4 @@ UNIQUE (username)
 /*
 mysql command to insert some username salt records:
 */
-INSERT INTO studentSaltHash VALUES ('my465', 'cs5999', 'w9Tr%!7u', '72b90f0cae9cb7febebb63026e55edd2’);
+INSERT INTO CS5999students VALUES ('my465', 'w9Tr%!7u', '72b90f0cae9cb7febebb63026e55edd2');

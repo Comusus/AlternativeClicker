@@ -19,7 +19,6 @@ public class Login extends HttpServlet {
     private static final String DB_NAME = "cs5999";
     //NOTE: the table below should already be in the DB
     //instructorPasswordTable contains the different salt for each user, and the encrypted password: hash = md5(salt+password)
-    private static final String STUDENT_SALT_HASH_TABLE_NAME = "studentSaltHash"; //Table: (username, salt, hash)
 
     //Table: (username, salt, hash)
 
@@ -106,28 +105,32 @@ public class Login extends HttpServlet {
             stmt = conn.prepareStatement("USE " + DB_NAME);
             stmt.execute();
             
-            String queryStr = "SELECT * FROM " + STUDENT_SALT_HASH_TABLE_NAME + " WHERE username = ? AND classID = ?";
+            String queryStr = "SELECT * FROM " + classID + "students" + " WHERE username = ?";
             stmt = conn.prepareStatement(queryStr);
             stmt.setString(1, username);
-            stmt.setString(2, classID);
             ResultSet rs = stmt.executeQuery();
 
             // iterate through the java resultset
-            rs.next();
-            String salt = rs.getString("salt");
-            String hash = rs.getString("hash");
-            
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update((salt+password).getBytes());
-            byte[] digest = md.digest();
-            String calculatedHash = DatatypeConverter.printHexBinary(digest).toLowerCase();
+            if (rs.isBeforeFirst()) { //if rs is not empty
+                rs.next();
+                String salt = rs.getString("salt");
+                String hash = rs.getString("hash");
 
-            System.out.println("stored salt:" + salt);
-            System.out.println("stored hash:" + hash);
-            System.out.println("entered password:" + password);
-            System.out.println("calculated hash:" + calculatedHash);
-            
-            return calculatedHash.equals(hash);
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update((salt+password).getBytes());
+                byte[] digest = md.digest();
+                String calculatedHash = DatatypeConverter.printHexBinary(digest).toLowerCase();
+
+                System.out.println("stored salt:" + salt);
+                System.out.println("stored hash:" + hash);
+                System.out.println("entered password:" + password);
+                System.out.println("calculated hash:" + calculatedHash);
+
+                return calculatedHash.equals(hash);
+            } else {
+                System.out.println("You aren't in this class");
+                return false;
+            }
             
         } catch (Exception e) {
             e.printStackTrace();
