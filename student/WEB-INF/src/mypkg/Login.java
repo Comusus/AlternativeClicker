@@ -45,18 +45,26 @@ public class Login extends HttpServlet {
         } else {
             System.out.println("yes");
             response.setContentType("text/html; charset=UTF-8");
+            
         
             // TODO
             // Logging in logic
             // CREATE TABLE students(class VARCHAR(50), username VARCHAR(50), salt VARCHAR(20), hash(sessionID))");
 
             // IF SESSION DOES NOT EXIST:
+            System.out.println("hello");
             Boolean session_exists = this.joinSession(classID, sessionID);
             System.out.println(session_exists);
             if (session_exists) {
+                HttpSession session = request.getSession();
+                session.setAttribute("studentID", studentID);
+                session.setAttribute("sessionID", sessionID);
+                session.setAttribute("classID", classID);
+                System.out.println("hello2");
             // TODO
                 String previous_answer = checkPreviousLogin(classID, sessionID, studentID);
                 System.out.println(previous_answer);
+                System.out.println("hello24242");
                 if (!previous_answer.equals("")) {
                     request.setAttribute("pressed" + previous_answer, "pressedButton");
                 }
@@ -68,10 +76,12 @@ public class Login extends HttpServlet {
                 LocalDateTime now = LocalDateTime.now();
                 String currTime = dtf.format(now);
                 request.setAttribute("lastAction", "Logged in at " + currTime);
-                RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
+                RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");
+                System.out.println("hello24242");
                 view.forward(request, response);
+                System.out.println("232322332");
             } else {
-                response.sendRedirect("index.html");
+//                response.sendRedirect("index.html");
                 out.println("<p> No Session Found </p>");    
             }
         }
