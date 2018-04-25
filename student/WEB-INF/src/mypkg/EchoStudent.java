@@ -14,6 +14,7 @@ public class EchoStudent extends HttpServlet {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "password";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
+    private static final String DB_NAME = "cs5999";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,10 +22,15 @@ public class EchoStudent extends HttpServlet {
         String buttonPressed = request.getParameter("submit");
         HttpSession httpSession = request.getSession();
         String studentID = (String) httpSession.getAttribute("studentID");
+        String classID = (String) httpSession.getAttribute("classID");
         String sessionID = (String) httpSession.getAttribute("sessionID");
         
         // TODO
         // Actual polling logic!!!
+//        if (hasOpenQuestion(classID, sessionID)) {
+//            String qID = getOpenQuestionID(classID, sessionID);
+//            
+//        }
         // TODO
         
         // Forward request to studentapp.jsp
@@ -47,21 +53,145 @@ public class EchoStudent extends HttpServlet {
     
     private boolean joinSession(String classID, String sessionID, String studentID){
         //TODO
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            //+-----------+-------------+------+-----+---------+-------+
+            //| Field     | Type        | Null | Key | Default | Extra |
+            //+-----------+-------------+------+-----+---------+-------+
+            //| sessionID | varchar(50) | YES  | UNI | NULL    |       |
+            //| time      | varchar(20) | YES  |     | NULL    |       |
+            //+-----------+-------------+------+-----+---------+-------+
+            //2 rows in set (0.00 sec)
+            //
+            //mysql> select * from CS5999;
+            //+----------------+------------+
+            //| sessionID      | time       |
+            //+----------------+------------+
+            //| CS599920180224 | 2018-02-24 |
+            //+----------------+------------+
+            
+            // Two ways to check if Session exists
+            // 1. Check if Table CS599920180224 exists
+            // 2. Check if CS599920180224 exists in the CS5999
+//            
+//            String table_name = classID + sessionID;
+//            DatabaseMetaData meta = conn.getMetaData();
+//            ResultSet rs = meta.getTables(null, null, table_name, null);
+//            if (rs.next()) {
+//                // Table exists
+//                return true;
+//            }
+//              else {
+//                // Table does not exist
+//                return false;
+//            }
+//            
+            String query = "SELECT * from " + classID + " WHERE sessionID =" + sessionID;
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery(query);
+            if (rs.isBeforeFirst()) {    
+                //no data
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
     
     private boolean hasOpenQuestion(String classID, String sessionID){
         //TODO
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            // https://stackoverflow.com/questions/17950245/difference-between-createstatement-and-preparedstatement-in-jdbc?lq=1
+            //| CS599920180224activeQuestion
+            // check if there is an open question
+            String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery(query);
+            if (rs.isBeforeFirst()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
     
     private String getOpenQuestionID(String classID, String sessionID){
         //TODO
-        return null;
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            // https://stackoverflow.com/questions/17950245/difference-between-createstatement-and-preparedstatement-in-jdbc?lq=1
+            //| CS599920180224activeQuestion
+            // check if there is an open question
+            String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery(query);
+            return rs.getString("qID");
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
     
     private boolean submitAnswer(String classID, String sessionID, String questionID, String studentID, String answer){
         //TODO
+        Connection conn = null;
+        PreparedStatement stmt;
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            // format: CS599920180224 studentID, qID, ans
+            // (studentID, qID) is unique from looking at Ming's code
+            String insertQuery = "INSERT INTO " + classID + sessionID 
+                    + "(studentID, qID, ans) VALUES (?,?,?) "
+                    + "ON DUPLICATE KEY UPDATE ans=?";
+
+            stmt = conn.prepareStatement(insertQuery);
+            stmt.setString(1, studentID);
+            stmt.setString(2, questionID);
+            stmt.setString(3, answer);
+            stmt.setString(4, answer);
+            // execute insert SQL stetement
+            stmt.executeUpdate();
+            return true;
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
