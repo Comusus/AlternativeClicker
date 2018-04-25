@@ -2,12 +2,14 @@ package mypkg;
 
 import java.io.*;
 import static java.lang.System.out;
+import java.security.MessageDigest;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.xml.bind.DatatypeConverter;
 
 public class Login extends HttpServlet {
 
@@ -15,7 +17,10 @@ public class Login extends HttpServlet {
     private static final String DB_PASSWORD = "password";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
     private static final String DB_NAME = "cs5999";
-    
+    //NOTE: the table below should already be in the DB
+    //instructorPasswordTable contains the different salt for each user, and the encrypted password: hash = md5(salt+password)
+    private static final String STUDENT_SALT_HASH_TABLE_NAME = "studentSaltHash"; //Table: (username, salt, hash)
+
     //Table: (username, salt, hash)
 
     @Override
@@ -33,50 +38,42 @@ public class Login extends HttpServlet {
         // TO DO THIS
         
         // Validate username and password
-        PrintWriter out = response.getWriter();
         boolean isValidPassword = isValidPassword(classID, studentID, password);
         if (!isValidPassword){
-            try{
-                out.println("Invalid password. Please try again");
-            } finally {
-                out.close();  // Always close the output writer
-            }
-            return;
-        }
-        else{
-            HttpSession session = request.getSession();
-            session.setAttribute("studentID", studentID);
-            session.setAttribute("sessionID", sessionID);
-            session.setAttribute("classID", classID);
-        }
-        
-        response.setContentType("text/html; charset=UTF-8");
-        
-        // TODO
-        // Logging in logic
-        
-        // IF SESSION DOES NOT EXIST:
-        Boolean session_exists = this.joinSession(classID, sessionID);
-        if (session_exists) {
-        // TODO
-            String previous_answer = checkPreviousLogin(classID, sessionID, studentID);
-            System.out.println(previous_answer);
-            if (!previous_answer.equals("")) {
-                request.setAttribute("pressed" + previous_answer, "pressedButton");
-            }
-            // Forward request to studentapp.jsp
-            request.setAttribute("sessionID", sessionID);
-            request.setAttribute("studentID", studentID);
-            request.setAttribute("classID", classID);
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
-            String currTime = dtf.format(now);
-            request.setAttribute("lastAction", "Logged in at " + currTime);
-            RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
-            view.forward(request, response);
-        } else {
+            System.out.println("Invalid password. Please try again");
             response.sendRedirect("index.html");
-            out.println("<p> No Session Found </p>");    
+        } else {
+            System.out.println("yes");
+            response.setContentType("text/html; charset=UTF-8");
+        
+            // TODO
+            // Logging in logic
+            // CREATE TABLE students(class VARCHAR(50), username VARCHAR(50), salt VARCHAR(20), hash(sessionID))");
+
+            // IF SESSION DOES NOT EXIST:
+            Boolean session_exists = this.joinSession(classID, sessionID);
+            System.out.println(session_exists);
+            if (session_exists) {
+            // TODO
+                String previous_answer = checkPreviousLogin(classID, sessionID, studentID);
+                System.out.println(previous_answer);
+                if (!previous_answer.equals("")) {
+                    request.setAttribute("pressed" + previous_answer, "pressedButton");
+                }
+                // Forward request to studentapp.jsp
+                request.setAttribute("sessionID", sessionID);
+                request.setAttribute("studentID", studentID);
+                request.setAttribute("classID", classID);
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                String currTime = dtf.format(now);
+                request.setAttribute("lastAction", "Logged in at " + currTime);
+                RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
+                view.forward(request, response);
+            } else {
+                response.sendRedirect("index.html");
+                out.println("<p> No Session Found </p>");    
+            }
         }
     }
 
@@ -88,9 +85,43 @@ public class Login extends HttpServlet {
     }
     
     /* Validates password is correct */
-    private boolean isValidPassword(String classID, String studentID, String password){
-        // TODO
-        return true;
+    private boolean isValidPassword(String classID, String username, String password){
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            String queryStr = "SELECT * FROM " + STUDENT_SALT_HASH_TABLE_NAME + " WHERE username = ? AND classID = ?";
+            stmt = conn.prepareStatement(queryStr);
+            stmt.setString(1, username);
+            stmt.setString(2, classID);
+            ResultSet rs = stmt.executeQuery();
+
+            // iterate through the java resultset
+            rs.next();
+            String salt = rs.getString("salt");
+            String hash = rs.getString("hash");
+            
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update((salt+password).getBytes());
+            byte[] digest = md.digest();
+            String calculatedHash = DatatypeConverter.printHexBinary(digest).toLowerCase();
+
+            System.out.println("stored salt:" + salt);
+            System.out.println("stored hash:" + hash);
+            System.out.println("entered password:" + password);
+            System.out.println("calculated hash:" + calculatedHash);
+            
+            return calculatedHash.equals(hash);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
     
     private String checkPreviousLogin(String classID, String sessionID, String studentID) {
