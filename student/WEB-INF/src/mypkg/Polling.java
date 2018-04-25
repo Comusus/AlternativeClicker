@@ -38,6 +38,7 @@ public class Polling extends HttpServlet {
                     if (submitAnswer(classID, sessionID, qID, studentID, "A")) {
                         out.println("Submitted A");
                         answered = true;
+                        request.setAttribute("pressedA", "pressedButton");
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -54,6 +55,7 @@ public class Polling extends HttpServlet {
                     if (submitAnswer(classID, sessionID, qID, studentID, "B")) {
                         out.println("Submitted B");
                         answered = true;
+                        request.setAttribute("pressedB", "pressedButton");
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -70,6 +72,7 @@ public class Polling extends HttpServlet {
                     if (submitAnswer(classID, sessionID, qID, studentID, "C")) {
                         out.println("Submitted C");
                         answered = true;
+                        request.setAttribute("pressedC", "pressedButton");
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -86,6 +89,7 @@ public class Polling extends HttpServlet {
                     if (submitAnswer(classID, sessionID, qID, studentID, "D")) {
                         out.println("Submitted D");
                         answered = true;
+                        request.setAttribute("pressedD", "pressedButton");
                     } else {
                         out.println("Failed to Submit");
                     }   
@@ -102,6 +106,7 @@ public class Polling extends HttpServlet {
                     if (submitAnswer(classID, sessionID, qID, studentID, "E")) {
                         out.println("Submitted E");
                         answered = true;
+                        request.setAttribute("pressedE", "pressedButton");
                     } else {
                         out.println("Failed to Submit");
                     }   

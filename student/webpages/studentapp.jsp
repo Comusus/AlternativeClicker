@@ -36,16 +36,16 @@
 <div class="container">
   <div class="row">
     <div align="center">
-      <form method="post" action="echo">        
-	    <input style="color:#0000A0;" type="submit" name="submit" value="A" />
+      <form method="post" action="answer">        
+	<input style="color:#0000A0;" class="${requestScope["pressedA"]}" type="submit" name="submit" value="A" />
         <br />
-        <input style="color:#0000A0;" type="submit" name="submit" value="B" />
+        <input style="color:#0000A0;" class="${requestScope["pressedB"]}" type="submit" name="submit" value="B" />
         <br />
-        <input style="color:#0000A0;" type="submit" name="submit" value="C" />
+        <input style="color:#0000A0;" class="${requestScope["pressedC"]}" type="submit" name="submit" value="C" />
         <br />
-        <input style="color:#0000A0;" type="submit" name="submit" value="D" />
+        <input style="color:#0000A0;" class="${requestScope["pressedD"]}" type="submit" name="submit" value="D" />
         <br />
-        <input style="color:#0000A0;" type="submit" name="submit" value="E" />
+        <input style="color:#0000A0;" class="${requestScope["pressedE"]}" type="submit" name="submit" value="E" />
       </form>
     </div>
 
