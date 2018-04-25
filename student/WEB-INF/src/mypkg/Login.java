@@ -15,6 +15,8 @@ public class Login extends HttpServlet {
     private static final String DB_PASSWORD = "password";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
     private static final String DB_NAME = "cs5999";
+    
+    //Table: (username, salt, hash)
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -54,11 +56,14 @@ public class Login extends HttpServlet {
         // Logging in logic
         
         // IF SESSION DOES NOT EXIST:
-        
         Boolean session_exists = this.joinSession(classID, sessionID);
         if (session_exists) {
         // TODO
-        
+            String previous_answer = checkPreviousLogin(classID, sessionID, studentID);
+            System.out.println(previous_answer);
+            if (!previous_answer.equals("")) {
+                request.setAttribute("pressed" + previous_answer, "pressedButton");
+            }
             // Forward request to studentapp.jsp
             request.setAttribute("sessionID", sessionID);
             request.setAttribute("studentID", studentID);
@@ -86,6 +91,49 @@ public class Login extends HttpServlet {
     private boolean isValidPassword(String classID, String studentID, String password){
         // TODO
         return true;
+    }
+    
+    private String checkPreviousLogin(String classID, String sessionID, String studentID) {
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+
+            //find questionID
+            String questionID = "";
+            String qIDquery = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            stmt = conn.prepareStatement(qIDquery);
+            ResultSet rs = stmt.executeQuery(qIDquery);
+            while (rs.next()) {
+                questionID = rs.getString("qID");
+            }
+            if (questionID.equals("")) {
+                System.out.println("meep");
+            } else {
+                System.out.println("meep2");
+            }
+            if (!questionID.equals("")) {
+                 String query = "SELECT ans from " + classID + sessionID 
+                    + " WHERE studentID = " + "'" + studentID + "'" 
+                    + " AND qID = " + "'" + questionID + "'";
+                System.out.println(query);
+                stmt = conn.prepareStatement(query);
+                ResultSet rs2 = stmt.executeQuery(query);
+                while (rs2.next()) {
+                    String answer = rs2.getString("ans");
+                    System.out.println("answer");
+                    return answer;
+                }                
+            }         
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
     
     private boolean joinSession(String classID, String sessionID){

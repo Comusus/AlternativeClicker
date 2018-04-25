@@ -214,11 +214,7 @@ public class Polling extends HttpServlet {
             out.println(query);
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);
-            if (rs.isBeforeFirst()) {
-                return true;
-            } else {
-                return false;
-            }
+            return rs.isBeforeFirst();
         } catch (Exception e) {
             e.printStackTrace();
         }
