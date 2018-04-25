@@ -31,7 +31,8 @@ public class Login extends HttpServlet {
         String studentID = request.getParameter("studentID");
         String password = request.getParameter("studentPassword");
         String classID = request.getParameter("classID");
-        String sessionID = request.getParameter("sessionID");
+        String classDate = request.getParameter("classDate");
+        String sessionID = this.getSessionID(classID, classDate);
         
         //TODO: Check to make sure inputs are valid (very similar to Attendance.java)
         // MAKE SURE
@@ -52,7 +53,6 @@ public class Login extends HttpServlet {
             // CREATE TABLE students(class VARCHAR(50), username VARCHAR(50), salt VARCHAR(20), hash(sessionID))");
 
             // IF SESSION DOES NOT EXIST:
-            System.out.println("hello");
             Boolean session_exists = this.joinSession(classID, sessionID);
             System.out.println(session_exists);
             if (session_exists) {
@@ -60,11 +60,9 @@ public class Login extends HttpServlet {
                 session.setAttribute("studentID", studentID);
                 session.setAttribute("sessionID", sessionID);
                 session.setAttribute("classID", classID);
-                System.out.println("hello2");
             // TODO
                 String previous_answer = checkPreviousLogin(classID, sessionID, studentID);
                 System.out.println(previous_answer);
-                System.out.println("hello24242");
                 if (!previous_answer.equals("")) {
                     request.setAttribute("pressed" + previous_answer, "pressedButton");
                 }
@@ -77,9 +75,7 @@ public class Login extends HttpServlet {
                 String currTime = dtf.format(now);
                 request.setAttribute("lastAction", "Logged in at " + currTime);
                 RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");
-                System.out.println("hello24242");
                 view.forward(request, response);
-                System.out.println("232322332");
             } else {
 //                response.sendRedirect("index.html");
                 out.println("<p> No Session Found </p>");    
@@ -93,6 +89,11 @@ public class Login extends HttpServlet {
             throws IOException, ServletException {
         doGet(request, response);
     }
+    
+    private String getSessionID(String classID, String date){
+        //TODO: could design more complex way to name a session here
+        return (classID + date).replace("-", "");
+    }    
     
     /* Validates password is correct */
     private boolean isValidPassword(String classID, String username, String password){
@@ -147,7 +148,7 @@ public class Login extends HttpServlet {
 
             //find questionID
             String questionID = "";
-            String qIDquery = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            String qIDquery = "SELECT qID FROM " + sessionID + "activeQuestion";
             stmt = conn.prepareStatement(qIDquery);
             ResultSet rs = stmt.executeQuery(qIDquery);
             while (rs.next()) {
@@ -159,7 +160,7 @@ public class Login extends HttpServlet {
                 System.out.println("meep2");
             }
             if (!questionID.equals("")) {
-                 String query = "SELECT ans from " + classID + sessionID 
+                 String query = "SELECT ans from " + sessionID 
                     + " WHERE studentID = " + "'" + studentID + "'" 
                     + " AND qID = " + "'" + questionID + "'";
                 System.out.println(query);
@@ -206,7 +207,7 @@ public class Login extends HttpServlet {
 //            }
 //            
             String query = "SELECT * from " + classID + " WHERE sessionID = " 
-                    + "'" +classID+sessionID + "'";
+                    + "'" + sessionID + "'";
             out.println(query);
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);

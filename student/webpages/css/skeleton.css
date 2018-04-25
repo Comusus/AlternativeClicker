@@ -231,6 +231,7 @@ input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
+input[type="date"], /* Gary: added this for date inputs */
 input[type="password"],
 textarea,
 select {
@@ -248,6 +249,7 @@ input[type="search"],
 input[type="text"],
 input[type="tel"],
 input[type="url"],
+input[type="date"], /* Gary: added this for date inputs */
 input[type="password"],
 textarea {
   -webkit-appearance: none;
@@ -263,6 +265,7 @@ input[type="search"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
+input[type="date"]:focus, /* Gary: added this for date inputs */
 input[type="password"]:focus,
 textarea:focus,
 select:focus {

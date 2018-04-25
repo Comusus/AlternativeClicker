@@ -26,9 +26,13 @@ public class Polling extends HttpServlet {
         String classID = (String) httpSession.getAttribute("classID");
         String sessionID = (String) httpSession.getAttribute("sessionID");
         
+        
         // TODO
         Boolean answered = false;
         if (buttonPressed.equals("A")){
+            System.out.println("green");
+            System.out.println(sessionID);
+            System.out.println("yellow");
             Boolean openquestion = this.hasOpenQuestion(classID, sessionID);
             if (!openquestion) {
                 out.println("No Open Question");
@@ -210,7 +214,7 @@ public class Polling extends HttpServlet {
             // https://stackoverflow.com/questions/17950245/difference-between-createstatement-and-preparedstatement-in-jdbc?lq=1
             //| CS599920180224activeQuestion
             // check if there is an open question
-            String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            String query = "SELECT qID FROM " + sessionID + "activeQuestion";
             out.println(query);
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);
@@ -235,7 +239,7 @@ public class Polling extends HttpServlet {
             // https://stackoverflow.com/questions/17950245/difference-between-createstatement-and-preparedstatement-in-jdbc?lq=1
             //| CS599920180224activeQuestion
             // check if there is an open question
-            String query = "SELECT qID FROM " + classID + sessionID + "activeQuestion";
+            String query = "SELECT qID FROM " + sessionID + "activeQuestion";
             stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
@@ -262,7 +266,7 @@ public class Polling extends HttpServlet {
             
             // format: CS599920180224 studentID, qID, ans
             // (studentID, qID) is unique from looking at Ming's code
-            String insertQuery = "INSERT INTO " + classID + sessionID 
+            String insertQuery = "INSERT INTO " + sessionID 
                     + "(studentID, qID, ans) VALUES (?,?,?) "
                     + "ON DUPLICATE KEY UPDATE ans=?";
 
