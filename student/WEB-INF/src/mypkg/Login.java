@@ -1,6 +1,7 @@
 package mypkg;
 
 import java.io.*;
+import static java.lang.System.out;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
@@ -13,6 +14,7 @@ public class Login extends HttpServlet {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "password";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/cs5999";
+    private static final String DB_NAME = "cs5999";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,18 +52,27 @@ public class Login extends HttpServlet {
         
         // TODO
         // Logging in logic
+        
+        // IF SESSION DOES NOT EXIST:
+        
+        Boolean session_exists = this.joinSession(classID, sessionID);
+        if (session_exists) {
         // TODO
         
-        // Forward request to studentapp.jsp
-        request.setAttribute("sessionID", sessionID);
-        request.setAttribute("studentID", studentID);
-        request.setAttribute("classID", classID);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-	LocalDateTime now = LocalDateTime.now();
-	String currTime = dtf.format(now);
-        request.setAttribute("lastAction", "Logged in at " + currTime);
-        RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
-        view.forward(request, response);
+            // Forward request to studentapp.jsp
+            request.setAttribute("sessionID", sessionID);
+            request.setAttribute("studentID", studentID);
+            request.setAttribute("classID", classID);
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+            String currTime = dtf.format(now);
+            request.setAttribute("lastAction", "Logged in at " + currTime);
+            RequestDispatcher view = request.getRequestDispatcher("studentapp.jsp");      
+            view.forward(request, response);
+        } else {
+            response.sendRedirect("index.html");
+            out.println("<p> No Session Found </p>");    
+        }
     }
 
     /* Redirect POST request to GET request. */
@@ -75,6 +86,47 @@ public class Login extends HttpServlet {
     private boolean isValidPassword(String classID, String studentID, String password){
         // TODO
         return true;
+    }
+    
+    private boolean joinSession(String classID, String sessionID){
+        //TODO
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            // Two ways to check if Session exists
+            // 1. Check if Table CS599920180224 exists
+            // 2. Check if CS599920180224 exists in the CS5999
+//            
+//            String table_name = classID + sessionID;
+//            DatabaseMetaData meta = conn.getMetaData();
+//            ResultSet rs = meta.getTables(null, null, table_name, null);
+//            if (rs.next()) {
+//                // Table exists
+//                return true;
+//            }
+//              else {
+//                // Table does not exist
+//                return false;
+//            }
+//            
+            String query = "SELECT * from " + classID + " WHERE sessionID = " 
+                    + "'" +classID+sessionID + "'";
+            out.println(query);
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery(query);
+            return rs.isBeforeFirst(); //false if no data
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
     
     /* Filter the string for special HTML characters to prevent
