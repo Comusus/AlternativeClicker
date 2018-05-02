@@ -49,7 +49,7 @@
     <div align="center">
 	  <h5> View Polling Results </h5>
 	  <br />
-      <form method="post" action="showQuestionResults">
+      <form method="post" action="showQuestionResults" target="_blank">
         <input type="text" placeholder="Question ID" name="questionID" />        <br />
         <input type="submit" name="submit" value="View Results" />
         <input type="submit" name="submit" value="Download Results" />

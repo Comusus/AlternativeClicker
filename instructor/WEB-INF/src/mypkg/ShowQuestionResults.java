@@ -114,6 +114,7 @@ public class ShowQuestionResults extends HttpServlet{
             response.setContentType("image/png"); /* Set the HTTP Response Type */
             /* Send a big chart back to the browser */
             ChartUtilities.writeChartAsPNG(streamOut, mychart, 640, 480);/* Write the data to the output stream */
+            ChartUtilities.
             
             pollStats.clear();
             return 1;
