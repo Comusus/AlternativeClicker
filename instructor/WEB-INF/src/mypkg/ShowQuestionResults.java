@@ -47,12 +47,10 @@ public class ShowQuestionResults extends HttpServlet{
         }
         else if (actionType.equals("Download Results")){
             PrintWriter out = response.getWriter();
-            success = this.downloadResults(sessionID, questionID);
+            success = this.downloadResults(sessionID, questionID, response);
             if (success == -1){
                 out.println("Failed to download result.");
             }
-            else
-                out.println("CSV File is created successfully.");
         }
         
         //TODO: show result in a web page here
@@ -125,10 +123,15 @@ public class ShowQuestionResults extends HttpServlet{
         }
     }
     
-    private int downloadResults(String sessionID, String questionID){
+    private int downloadResults(String sessionID, String questionID, HttpServletResponse response)
+            throws IOException, ServletException {
         //TODO: send result as file
         Connection conn = null;
         PreparedStatement stmt;
+        response.setHeader("Content-Disposition", "attachment; filename=output.csv"); 
+        response.setContentType("text/csv"); 
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
@@ -144,13 +147,12 @@ public class ShowQuestionResults extends HttpServlet{
             // execute SQL query
             ResultSet rs = stmt.executeQuery();
             
-            FileWriter fw = new FileWriter(sessionID+".csv");
-            fw.append("studentID");
-            fw.append(',');
-            fw.append("qID");
-            fw.append(',');
-            fw.append("ans");
-            fw.append('\n');
+            out.append("studentID");
+            out.append(',');
+            out.append("qID");
+            out.append(',');
+            out.append("ans");
+            out.append('\n');
             
             // iterate through the java resultset
             while (rs.next()) {
@@ -158,15 +160,14 @@ public class ShowQuestionResults extends HttpServlet{
                 String qID = rs.getString("qID");
                 String ans = rs.getString("ans");
                 // print the results
-                fw.append(studentID);
-                fw.append(',');
-                fw.append(qID);
-                fw.append(',');
-                fw.append(ans);
-                fw.append('\n');
+                out.append(studentID);
+                out.append(',');
+                out.append(qID);
+                out.append(',');
+                out.append(ans);
+                out.append('\n');
             }
-            fw.flush();
-            fw.close();
+            out.flush();
             return 1;
 
         } catch (Exception e) {
