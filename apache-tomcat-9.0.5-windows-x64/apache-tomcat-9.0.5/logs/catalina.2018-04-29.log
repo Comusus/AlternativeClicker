@@ -1,0 +1,394 @@
+29-Apr-2018 20:34:51.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.5
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 21:42:23 UTC
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.5.0
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_144
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\logging.properties
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\temp
+29-Apr-2018 20:34:51.529 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+29-Apr-2018 20:34:51.545 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+29-Apr-2018 20:34:51.545 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+29-Apr-2018 20:34:52.401 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+29-Apr-2018 20:34:52.604 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:34:52.825 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+29-Apr-2018 20:34:52.841 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:34:52.841 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+29-Apr-2018 20:34:52.841 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1863 ms
+29-Apr-2018 20:34:52.872 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Apr-2018 20:34:52.872 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.5
+29-Apr-2018 20:34:52.888 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:34:53.716 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Apr-2018 20:34:53.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [906] ms
+29-Apr-2018 20:34:53.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+29-Apr-2018 20:34:53.810 SEVERE [main] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2b0f373b]
+	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4752)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4887)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:740)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Peter\Desktop\CS5999\student\build\web] is not valid
+	at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:706)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	... 41 more
+
+29-Apr-2018 20:34:53.825 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2b0f373b]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:744)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+29-Apr-2018 20:34:53.825 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml] has finished in [31] ms
+29-Apr-2018 20:34:53.888 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs]
+29-Apr-2018 20:34:53.950 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs] has finished in [62] ms
+29-Apr-2018 20:34:53.950 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples]
+29-Apr-2018 20:34:54.482 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples] has finished in [532] ms
+29-Apr-2018 20:34:54.482 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet]
+29-Apr-2018 20:34:54.529 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet] has finished in [31] ms
+29-Apr-2018 20:34:54.529 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager]
+29-Apr-2018 20:34:54.560 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager] has finished in [31] ms
+29-Apr-2018 20:34:54.560 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager]
+29-Apr-2018 20:34:54.607 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager] has finished in [47] ms
+29-Apr-2018 20:34:54.607 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT]
+29-Apr-2018 20:34:54.638 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT] has finished in [31] ms
+29-Apr-2018 20:34:54.638 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:34:54.654 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:34:54.669 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1823 ms
+29-Apr-2018 20:34:58.451 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:34:58.499 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:34:59.029 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [530] ms
+29-Apr-2018 20:34:59.035 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:36:12.140 WARNING [http-nio-8080-exec-12] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [instructor] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Apr-2018 20:36:12.140 WARNING [http-nio-8080-exec-12] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [instructor] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+29-Apr-2018 20:36:12.656 INFO [http-nio-8080-exec-12] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:36:12.687 INFO [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:36:13.078 INFO [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [391] ms
+29-Apr-2018 20:36:13.100 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:36:15.231 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+29-Apr-2018 20:37:27.247 WARNING [http-nio-8080-exec-24] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [instructor] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Apr-2018 20:37:27.247 WARNING [http-nio-8080-exec-24] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [instructor] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+29-Apr-2018 20:37:27.747 INFO [http-nio-8080-exec-24] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:37:27.793 INFO [http-nio-8080-exec-25] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:37:28.137 INFO [http-nio-8080-exec-25] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [344] ms
+29-Apr-2018 20:37:28.137 INFO [http-nio-8080-exec-19] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:37:31.699 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+29-Apr-2018 20:38:23.504 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Apr-2018 20:38:23.504 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:38:23.738 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:38:24.019 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Apr-2018 20:38:24.051 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [instructor] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Apr-2018 20:38:24.051 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [instructor] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+29-Apr-2018 20:38:24.066 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:38:24.066 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:38:24.082 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:38:24.082 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.5
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 21:42:23 UTC
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.5.0
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_144
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\logging.properties
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\temp
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+29-Apr-2018 20:39:09.320 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+29-Apr-2018 20:39:10.023 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+29-Apr-2018 20:39:10.148 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:39:10.257 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+29-Apr-2018 20:39:10.273 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:39:10.273 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+29-Apr-2018 20:39:10.273 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1326 ms
+29-Apr-2018 20:39:10.304 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Apr-2018 20:39:10.304 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.5
+29-Apr-2018 20:39:10.320 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:39:11.055 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Apr-2018 20:39:11.102 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [782] ms
+29-Apr-2018 20:39:11.102 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+29-Apr-2018 20:39:11.102 SEVERE [main] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2b0f373b]
+	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4752)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4887)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:740)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Peter\Desktop\CS5999\student\build\web] is not valid
+	at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:706)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	... 41 more
+
+29-Apr-2018 20:39:11.133 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml]
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@2b0f373b]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:744)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:716)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:703)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:619)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1829)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:530)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1575)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:308)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:964)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:839)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1425)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1415)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:941)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:258)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:682)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+29-Apr-2018 20:39:11.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\student.xml] has finished in [31] ms
+29-Apr-2018 20:39:11.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs]
+29-Apr-2018 20:39:11.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\docs] has finished in [94] ms
+29-Apr-2018 20:39:11.227 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples]
+29-Apr-2018 20:39:11.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\examples] has finished in [500] ms
+29-Apr-2018 20:39:11.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet]
+29-Apr-2018 20:39:11.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\helloservlet] has finished in [31] ms
+29-Apr-2018 20:39:11.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager]
+29-Apr-2018 20:39:11.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\host-manager] has finished in [36] ms
+29-Apr-2018 20:39:11.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager]
+29-Apr-2018 20:39:11.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\manager] has finished in [47] ms
+29-Apr-2018 20:39:11.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT]
+29-Apr-2018 20:39:11.857 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\webapps\ROOT] has finished in [16] ms
+29-Apr-2018 20:39:11.857 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:39:11.872 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:39:11.872 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1608 ms
+29-Apr-2018 20:39:15.514 INFO [http-nio-8080-exec-7] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:39:15.545 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:39:16.154 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [609] ms
+29-Apr-2018 20:39:16.170 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:39:37.820 WARNING [http-nio-8080-exec-11] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [instructor] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Apr-2018 20:39:37.836 WARNING [http-nio-8080-exec-11] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [instructor] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+29-Apr-2018 20:39:38.336 INFO [http-nio-8080-exec-11] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:39:39.824 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1295)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:972)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+29-Apr-2018 20:39:43.711 INFO [http-nio-8080-exec-13] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:39:44.046 INFO [http-nio-8080-exec-13] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [335] ms
+29-Apr-2018 20:39:44.046 INFO [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:41:13.828 INFO [http-nio-8080-exec-22] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/instructor]
+29-Apr-2018 20:41:17.361 INFO [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml]
+29-Apr-2018 20:41:17.762 INFO [http-nio-8080-exec-19] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor [C:\Users\Peter\Desktop\CS5999\apache-tomcat-9.0.5-windows-x64\apache-tomcat-9.0.5\conf\Catalina\localhost\instructor.xml] has finished in [401] ms
+29-Apr-2018 20:41:17.766 INFO [http-nio-8080-exec-17] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/instructor]] after start() had already been called. The second call will be ignored.
+29-Apr-2018 20:46:14.546 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+29-Apr-2018 20:46:14.547 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:46:14.785 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:46:15.002 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Apr-2018 20:46:15.154 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [instructor] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Apr-2018 20:46:15.155 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [instructor] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(Unknown Source)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.lang.Thread.run(Unknown Source)
+29-Apr-2018 20:46:15.175 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:46:15.184 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+29-Apr-2018 20:46:15.188 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Apr-2018 20:46:15.191 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

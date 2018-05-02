@@ -28,6 +28,7 @@
     <div align="center">
       <h2>Instructor Attendance Tracker</h2>
 	  <h4>Session ID: ${requestScope["sessionID"]}</h4>
+          <h6>Status: ${requestScope["statusMsg"]}</h6>
     </div>
   </div>
 </div>

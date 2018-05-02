@@ -61,6 +61,7 @@ public class Login extends HttpServlet {
         
         // Forward request to attendance.jsp
         request.setAttribute("sessionID", sessionID);
+        request.setAttribute("statusMsg", "Successfully Logged In");
         RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
         view.forward(request, response);
     }

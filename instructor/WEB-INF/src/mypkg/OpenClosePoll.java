@@ -32,18 +32,31 @@ public class OpenClosePoll extends HttpServlet{
         PrintWriter out = response.getWriter();
         int success = 0; //1 if all notmal, -1 if operation failed
         
+        String statusMsg;
         if (actionType.equals("OPEN POLLING")){
             success = this.openPoll(sessionID, questionID);
             if (success == -1)
-                out.println("Failed to open Poll");
+                statusMsg = "Failed to open poll (try again later)";
+            else
+                statusMsg = "Successfully opened poll";
         }
         else if (actionType.equals("CLOSE POLLING")){
             success = this.closePoll(sessionID, questionID);
             if (success == -1)
-                out.println("Failed to close Poll");
+                statusMsg = "Failed to close poll (try again later)";
+            else
+                statusMsg = "Successfully closed poll";
+        }
+        else{
+            statusMsg = "Something unexpected happened. Try again.";
         }
         
         //TODO: present next web page here, database configured correctly.
+        // Forward request to attendance.jsp
+        request.setAttribute("sessionID", sessionID);
+        request.setAttribute("statusMsg", statusMsg);
+        RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
+        view.forward(request, response);
     }
     
     // Redirect POST request to GET request.
