@@ -43,7 +43,7 @@ public class OpenClosePoll extends HttpServlet{
         else if (actionType.equals("CLOSE POLLING")){
             success = this.closePoll(sessionID, questionID);
             if (success == -1)
-                statusMsg = "Failed to close poll (try again later)";
+                statusMsg = "Failed to close poll (make sure question ID exists)";
             else
                 statusMsg = "Successfully closed poll";
         }
@@ -110,7 +110,17 @@ public class OpenClosePoll extends HttpServlet{
             
             if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
                 return -1;
-
+            
+            //If question ID does not exist, return -1
+            String existsRowSQL = "SELECT * FROM " + sessionID+"activeQuestion" + " WHERE qID=?";
+            stmt = conn.prepareStatement(existsRowSQL);
+            stmt.setString(1, questionID);
+            ResultSet rs = stmt.executeQuery();
+            if (!rs.next()){
+                return -1;
+            }
+            
+            
             String deleteRowSQL = "DELETE FROM " + sessionID+"activeQuestion"
 		+ " WHERE qID=?";
             stmt = conn.prepareStatement(deleteRowSQL);
