@@ -60,6 +60,8 @@ public class Login extends HttpServlet {
         createSessionActiveQuestionTableIfNotExist(sessionID);
         
         // Forward request to attendance.jsp
+//        List<String> questions = returnQuestions(sessionID);
+//        request.setAttribute("qID_list", questions);
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("statusMsg", "Successfully Logged In");
         RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
@@ -239,5 +241,35 @@ public class Login extends HttpServlet {
             e.printStackTrace();
             return false;
         }
+    }
+    
+    private List<String> returnQuestions(String sessionID) {
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        List<String> qID_list = new ArrayList<>();
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            String queryStr = "SELECT DISTINCT qID FROM " + sessionID;
+            stmt = conn.prepareStatement(queryStr);
+            ResultSet rs = stmt.executeQuery();
+            
+            // iterate through the java resultset
+            while(rs.next()){
+                qID_list.add(rs.getString("qID"));
+            }
+            return qID_list;
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }
+        return qID_list;
+        
     }
 }

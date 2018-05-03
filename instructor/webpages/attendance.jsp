@@ -51,8 +51,16 @@
 	  <br />
       <form method="post" action="showQuestionResults" target="_blank">
         <input type="text" placeholder="Question ID" name="questionID" />        <br />
+        <select name="questionID" placeholder="Select a Question">
+        <c:forEach var="item" items="${requestScope["qID_list"]}">
+            <option value=${item}>${item}</option>
+        </c:forEach>
+        
+        
+        
         <input type="submit" name="submit" value="View Results" />
         <input type="submit" name="submit" value="Download Results" />
+         wtf isadidsi
       </form> 
     </div>
   </div>
