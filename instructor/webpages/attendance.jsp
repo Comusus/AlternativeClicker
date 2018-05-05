@@ -64,11 +64,13 @@
       <form method="post" action="showQuestionResults" target="_blank">
 <!--        <input type="text" placeholder="Question ID" name="questionID" />        <br />-->
         
-        <select name="questionID" class="dropdown"> 
+        <select name="questionID" class="dropdown">
         <c:forEach var="item" items="${qID_list}">
             <option value=${item}>${item}</option>
         </c:forEach>
+            <option value="all">All Questions</option>
         </select>
+        <br>
         
         <input type="submit" name="submit" value="View Results" />
         <input type="submit" name="submit" value="Download Results" />
