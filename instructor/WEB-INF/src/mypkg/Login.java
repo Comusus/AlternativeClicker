@@ -63,7 +63,7 @@ public class Login extends HttpServlet {
         List<String> questions = returnQuestions(sessionID);
         System.out.println(questions);
         String open_question = getOpenQuestion(sessionID);
-        request.setAttribute("open_qIDs", open_question);
+        request.setAttribute("open_qID", open_question);
         request.setAttribute("qID_list", questions);
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("statusMsg", "Successfully Logged In");

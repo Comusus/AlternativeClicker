@@ -39,15 +39,21 @@
     <div align="center">
 	  <h5> Open/Close Polling </h5>
 	  <br />
+        <c:choose>
+            <c:when test="${open_qID == 'None'}">
+                <c:set var="name" scope="application" value=""/>
+            </c:when>
+            <c:otherwise>
+                <c:set var="name" scope="application" value="${open_qID}"/>
+            </c:otherwise>
+        </c:choose>
       <form method="post" action="openClosePoll">
-        <input type="text" placeholder="Question ID" name="questionID" value="${open_qIDs}" required/>        <br />
+        <input type="text" placeholder="Question ID" name="questionID" value="${name}" required/>        <br />
         <input style="color:#2AB441;" type="submit" name="submit" value="OPEN POLLING" />
         <input style="color:#E01010;" type="submit" name="submit" value="CLOSE POLLING" />
-        <p> Open Question:
-        <c:forEach var="q" items="${open_qIDs}">
-            ${q}
-        </c:forEach>
-        </p>
+        <p> Open Question: ${open_qID} </p>
+        
+       
       </form> 
 	</div>
   </div>
