@@ -60,8 +60,9 @@ public class Login extends HttpServlet {
         createSessionActiveQuestionTableIfNotExist(sessionID);
         
         // Forward request to attendance.jsp
-//        List<String> questions = returnQuestions(sessionID);
-//        request.setAttribute("qID_list", questions);
+        List<String> questions = returnQuestions(sessionID);
+        System.out.println(questions);
+        request.setAttribute("qID_list", questions);
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("statusMsg", "Successfully Logged In");
         RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
@@ -230,10 +231,10 @@ public class Login extends HttpServlet {
             byte[] digest = md.digest();
             String calculatedHash = DatatypeConverter.printHexBinary(digest).toLowerCase();
 
-            System.out.println("stored salt:" + salt);
-            System.out.println("stored hash:" + hash);
-            System.out.println("entered password:" + password);
-            System.out.println("calculated hash:" + calculatedHash);
+//            System.out.println("stored salt:" + salt);
+//            System.out.println("stored hash:" + hash);
+//            System.out.println("entered password:" + password);
+//            System.out.println("calculated hash:" + calculatedHash);
             
             return calculatedHash.equals(hash);
             
