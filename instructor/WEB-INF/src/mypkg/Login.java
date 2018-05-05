@@ -62,6 +62,8 @@ public class Login extends HttpServlet {
         // Forward request to attendance.jsp
         List<String> questions = returnQuestions(sessionID);
         System.out.println(questions);
+        String open_question = getOpenQuestion(sessionID);
+        request.setAttribute("open_qIDs", open_question);
         request.setAttribute("qID_list", questions);
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("statusMsg", "Successfully Logged In");
@@ -273,4 +275,30 @@ public class Login extends HttpServlet {
         return qID_list;
         
     }
+    
+    private String getOpenQuestion(String sessionID){
+        //TODO
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        try {
+            //switch to correct db, use prepased
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            String query = "SELECT * FROM " + sessionID + "activeQuestion";
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                return rs.getString("qID");
+            }
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "None";
+    }
+    
 }

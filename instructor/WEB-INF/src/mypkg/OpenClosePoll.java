@@ -84,6 +84,10 @@ public class OpenClosePoll extends HttpServlet{
             if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
                 return -1;
 
+            String deleteTableSql = "DELETE FROM " + sessionID + "activeQuestion";
+            stmt = conn.prepareStatement(deleteTableSql);
+            stmt.executeUpdate();
+            
             String insertTableSQL = "INSERT INTO " + sessionID+"activeQuestion"
 		+ " (qID) VALUES"
 		+ " (?)"
