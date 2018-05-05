@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -14,7 +15,7 @@
   <link rel="stylesheet" href="css/main.css">  
   
 </head>
- 
+
 <body>
 
 <%
@@ -52,7 +53,7 @@
       <form method="post" action="showQuestionResults" target="_blank">
         <input type="text" placeholder="Question ID" name="questionID" />        <br />
         <select name="questionID" placeholder="Select a Question">
-        <c:forEach var="item" items="${requestScope["qID_list"]}">
+        <c:forEach var="item" items="${qID_list}">
             <option value=${item}>${item}</option>
         </c:forEach>
         
@@ -60,7 +61,6 @@
         
         <input type="submit" name="submit" value="View Results" />
         <input type="submit" name="submit" value="Download Results" />
-         wtf isadidsi
       </form> 
     </div>
   </div>
