@@ -28,6 +28,7 @@ public class OpenClosePoll extends HttpServlet{
         HttpSession httpSession = request.getSession();
         String username = (String) httpSession.getAttribute("username");
         String sessionID = (String) httpSession.getAttribute("sessionID");
+        System.out.println("meeperZ" + sessionID);
         
         PrintWriter out = response.getWriter();
         int success = 0; //1 if all notmal, -1 if operation failed
@@ -53,6 +54,9 @@ public class OpenClosePoll extends HttpServlet{
         
         //TODO: present next web page here, database configured correctly.
         // Forward request to attendance.jsp
+        List<String> questions = returnQuestions(sessionID);
+        System.out.println(questions);
+        request.setAttribute("qID_list", questions);
         request.setAttribute("sessionID", sessionID);
         request.setAttribute("statusMsg", statusMsg);
         RequestDispatcher view = request.getRequestDispatcher("attendance.jsp");      
@@ -133,5 +137,35 @@ public class OpenClosePoll extends HttpServlet{
             e.printStackTrace();
             return -1;
         }
-    }    
+    }
+    
+    private List<String> returnQuestions(String sessionID) {
+        Connection conn = null;
+        PreparedStatement stmt;
+        
+        List<String> qID_list = new ArrayList<>();
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            stmt = conn.prepareStatement("USE " + DB_NAME);
+            stmt.execute();
+            
+            String queryStr = "SELECT DISTINCT qID FROM " + sessionID;
+            stmt = conn.prepareStatement(queryStr);
+            ResultSet rs = stmt.executeQuery();
+            
+            // iterate through the java resultset
+            while(rs.next()){
+                qID_list.add(rs.getString("qID"));
+            }
+            return qID_list;
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }
+        return qID_list;
+        
+    }
 }

@@ -40,7 +40,7 @@
 	  <h5> Open/Close Polling </h5>
 	  <br />
       <form method="post" action="openClosePoll">
-        <input type="text" placeholder="Question ID" name="questionID" />        <br />
+        <input type="text" placeholder="Question ID" name="questionID" value="" required/>        <br />
         <input style="color:#2AB441;" type="submit" name="submit" value="OPEN POLLING" />
         <input style="color:#E01010;" type="submit" name="submit" value="CLOSE POLLING" />
       </form> 
@@ -51,13 +51,13 @@
 	  <h5> View Polling Results </h5>
 	  <br />
       <form method="post" action="showQuestionResults" target="_blank">
-        <input type="text" placeholder="Question ID" name="questionID" />        <br />
-        <select name="questionID" placeholder="Select a Question">
+<!--        <input type="text" placeholder="Question ID" name="questionID" />        <br />-->
+        
+        <select name="questionID" class="dropdown"> 
         <c:forEach var="item" items="${qID_list}">
             <option value=${item}>${item}</option>
         </c:forEach>
-        
-        
+        </select>
         
         <input type="submit" name="submit" value="View Results" />
         <input type="submit" name="submit" value="Download Results" />
