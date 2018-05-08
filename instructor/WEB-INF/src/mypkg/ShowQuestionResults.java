@@ -142,8 +142,9 @@ public class ShowQuestionResults extends HttpServlet{
             PrintWriter out = response.getWriter();
             
             String queryStr = "";
-            if (questionID == "all"){
-                response.setHeader("Content-Disposition", "attachment; filename="+sessionID+"_all.csv"); 
+            
+            if (questionID.equals("all")){
+                response.setHeader("Content-Disposition", "attachment; filename="+sessionID+"_all.csv");
                 queryStr = "SELECT * FROM " + sessionID;
                 stmt = conn.prepareStatement(queryStr);
             }
