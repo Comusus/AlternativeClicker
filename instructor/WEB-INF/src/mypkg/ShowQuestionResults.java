@@ -128,10 +128,6 @@ public class ShowQuestionResults extends HttpServlet{
         //TODO: send result as file
         Connection conn = null;
         PreparedStatement stmt;
-        response.setHeader("Content-Disposition", "attachment; filename="+sessionID+"_"+questionID+".csv"); 
-        response.setContentType("text/csv"); 
-        response.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
@@ -140,9 +136,23 @@ public class ShowQuestionResults extends HttpServlet{
             
             if (sessionID.contains(";")) //no session name should contain ";", prevent injection attack.
                 return -1;
-            String queryStr = "SELECT * FROM " + sessionID + " WHERE qID = ?";
-            stmt = conn.prepareStatement(queryStr);
-            stmt.setString(1, questionID);
+            
+            response.setContentType("text/csv"); 
+            response.setCharacterEncoding("UTF-8");
+            PrintWriter out = response.getWriter();
+            
+            String queryStr = "";
+            if (questionID == "all"){
+                response.setHeader("Content-Disposition", "attachment; filename="+sessionID+"_all.csv"); 
+                queryStr = "SELECT * FROM " + sessionID;
+                stmt = conn.prepareStatement(queryStr);
+            }
+            else{
+                response.setHeader("Content-Disposition", "attachment; filename="+sessionID+"_"+questionID+".csv"); 
+                queryStr = "SELECT * FROM " + sessionID + " WHERE qID = ?";
+                stmt = conn.prepareStatement(queryStr);
+                stmt.setString(1, questionID);
+            }
             
             // execute SQL query
             ResultSet rs = stmt.executeQuery();
@@ -151,7 +161,7 @@ public class ShowQuestionResults extends HttpServlet{
             out.append(',');
             out.append("qID");
             out.append(',');
-            out.append("ans");
+            out.append("Ans");
             out.append('\n');
             
             // iterate through the java resultset
